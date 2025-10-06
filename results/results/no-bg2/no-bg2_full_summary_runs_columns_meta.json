@@ -1,0 +1,41 @@
+{
+  "grid_keys": [
+    "backbone",
+    "features",
+    "model"
+  ],
+  "report_keep": [
+    "images_dir",
+    "included_folders",
+    "epochs",
+    "mse_weight_epochs",
+    "optim",
+    "lr_auto",
+    "lr_schedule",
+    "weight_decay"
+  ],
+  "constants": [
+    "included_folders",
+    "epochs",
+    "mse_weight_epochs",
+    "optim",
+    "lr_auto",
+    "lr_schedule",
+    "weight_decay"
+  ],
+  "top_cols": [
+    "run_id",
+    "included_folders",
+    "epochs",
+    "mse_weight_epochs",
+    "optim",
+    "lr_auto",
+    "lr_schedule",
+    "weight_decay",
+    "backbone",
+    "features",
+    "model",
+    "best_metric",
+    "best_epoch"
+  ]
+}

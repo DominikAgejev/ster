@@ -1,0 +1,8 @@
+[sweep] === ./configs/results/no-bg2.yaml ===
+[sweep] cmd: python [sweep] cmd: -u [sweep] cmd: -m [sweep] cmd: src.engine.sweep [sweep] cmd: --config [sweep] cmd: ./configs/results/no-bg2.yaml [sweep] cmd: --only_full [sweep] cmd: --auto-summary [sweep] cmd: --analysis [sweep] cmd: --eval-winners [sweep] cmd: --test_split_file [sweep] cmd: AUTO [sweep] cmd: --skip-existing 
+[sweep] FULL-only mode: training full stage for all runs.
+[sweep] === Run 1/24 ===
+[sweep] id=001_model=late__backbone=smallcnn__features=image
+[run]  python -m src.engine.experiment --images_dir /home/data/Pantone/cropped-256-ada --json_dir /home/data/Pantone/original --labels_csv /home/data/Pantone/gt/pantone_labels.csv --outdir ./checkpoints/results/no-bg2/full --logdir ./runs/results/no-bg2/full --included_folders focus --group_split class --epochs 100 --batch_size 32 --val_split 0.15 --seed 101 --color_space rgb --pred_activation sigmoid_eps --mse_space rgb --mse_weight_start 1.0 --mse_weight_epochs 75 --robust huber --optim adamw --weight_decay 0.0001 --lr_schedule cosine --meta_encoder none --token_stage=-2 --min_keep_epochs 0 --save_top_k 1 --ckpt_monitor de00 --ckpt_mode min --early_stop_patience 10 --early_stop_min_delta 0.008 --early_stop_monitor de00 --early_stop_mode min --early_stop_min_epoch 50 --restore_best_on_stop --model late --backbone smallcnn --features image --tag_keys model backbone features
+[sweep][warn] FAILED for ./configs/results/no-bg2.yaml (exit 1). Continuing...
+

@@ -1,0 +1,11 @@
+run_id,best_metric,best_epoch,ckpt_path,model,backbone,features,excluded_folders,mse_weight_epochs,mse_weight_start,lr,weight_decay,pred_activation,activation_eps,seed
+61d91036847f,2.344339949538909,95,/home/dominik/repo/checkpoints/sweep/compare-old/late_smallcnn_e095_de002.3443.pt,late,smallcnn,image+meta,pixel+samsung,25,1.0,0.001,0.0001,sigmoid_eps,0.001,100
+d8e2e6d2ff96,2.539875682578029,57,/home/dominik/repo/checkpoints/sweep/compare-old/late_smallcnn_e057_de002.5399.pt,late,smallcnn,image+meta,pixel+samsung,75,1.0,0.001,0.0001,sigmoid_eps,0.001,100
+dc8d5d6de90b,2.549168678651373,53,/home/dominik/repo/checkpoints/sweep/compare-old/late_smallcnn_e053_de002.5492.pt,late,smallcnn,image+mean+meta,pixel+samsung,75,1.0,0.001,0.0001,sigmoid_eps,0.001,100
+547c156fe365,2.664228486727519,42,/home/dominik/repo/checkpoints/sweep/compare-old/late_smallcnn_e042_de002.6642.pt,late,smallcnn,image+mean+meta,pixel+samsung,25,1.0,0.001,0.0001,sigmoid_eps,0.001,100
+a23566bbeab9,2.665178975751323,91,/home/dominik/repo/checkpoints/sweep/compare-old/late_smallcnn_e091_de002.6652.pt,late,smallcnn,image+meta,samsung,25,1.0,0.001,0.0001,sigmoid_eps,0.001,100
+2a04fd5d01c4,2.678055832184941,20,/home/dominik/repo/checkpoints/sweep/compare-old/late_resnet18_e020_de002.6781.pt,late,resnet18,image+mean+meta,pixel+samsung,75,1.0,0.001,0.0001,sigmoid_eps,0.001,100
+5ec80f46f4c6,2.732025400284798,84,/home/dominik/repo/checkpoints/sweep/compare-old/late_smallcnn_e084_de002.7320.pt,late,smallcnn,image+mean+meta,samsung,25,1.0,0.001,0.0001,sigmoid_eps,0.001,100
+45ef00fcd184,2.751307674201138,23,/home/dominik/repo/checkpoints/sweep/compare-old/late_resnet18_e023_de002.7513.pt,late,resnet18,image+mean+meta,pixel+samsung,25,1.0,0.001,0.0001,sigmoid_eps,0.001,100
+b6431c2454eb,2.874685633567072,39,/home/dominik/repo/checkpoints/sweep/compare-old/late_resnet18_e039_de002.8747.pt,late,resnet18,image+meta,samsung,75,1.0,0.001,0.0001,sigmoid_eps,0.001,100
+56ee0d2c2881,2.8818487661430634,21,/home/dominik/repo/checkpoints/sweep/compare-old/late_resnet18_e021_de002.8818.pt,late,resnet18,image+meta,pixel+samsung,75,1.0,0.001,0.0001,sigmoid_eps,0.001,100

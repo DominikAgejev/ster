@@ -1,0 +1,67 @@
+# src/configs/results/film.yaml
+base:
+  # --- logging: separate roots per config ---
+  logdir: ./runs/results/film
+  outdir: ./checkpoints/results/film
+  # --- data ---
+  images_dir: /home/data/Pantone/cropped-merged-256
+  included_folders: ["focus"]
+  json_dir:   /home/data/Pantone/original
+  labels_csv: /home/data/Pantone/gt/pantone_labels.csv
+  group_split: class
+
+  # --- training defaults ---
+  epochs: 100
+  batch_size: 32
+  val_split: 0.15
+  seed: 101
+
+  color_space: rgb
+  pred_activation: sigmoid_eps
+
+  # losses
+  mse_space: rgb
+  mse_weight_start: 1.0
+  mse_weight_epochs: 75
+
+  # optimizer/schedule bound to smallcnn
+  optim: adamw
+  weight_decay: 0.0001
+  lr_schedule: cosine
+
+  # pruning & checkpoints
+  prune_short_runs: true
+  min_keep_epochs: 15
+  save_top_k: 2
+  save_last: true
+  ckpt_monitor: de00
+  ckpt_mode: min
+
+  # early stopping
+  early_stop_patience: 12
+  early_stop_min_delta: 0.008
+  early_stop_monitor: de00
+  early_stop_mode: min
+  early_stop_min_epoch: 50
+  restore_best_on_stop: true
+
+  model: film
+  features: image+mean+meta
+  meta_encoder: none
+
+# Report settings reused by the summarizer and winners selection
+report:
+  keep_from_base: [images_dir, included_folders, epochs, mse_weight_epochs, optim, lr_auto, lr_schedule, weight_decay]
+  # extra_group_keys: [model]
+  top_k: 1   # pick best 1 as 'winner' in this single-stage setup
+
+grid:
+  backbone: [smallcnn, resnet18]
+  token_stage:
+    - -3         # layer2 only
+    - -2         # layer3 only
+    # - -1         # layer4 only
+    # - [1, 2]     # layer2+layer3
+    - [2, 3]     # layer3+layer4
+    # - [1, 3]     # layer2+layer4 (non-contiguous)
+    - [1,2,3]

@@ -1,0 +1,5 @@
+{
+  "run_id": "022_model=xattn__backbone=resnet18__features=image+mean",
+  "rc": 0,
+  "secs": 346.88
+}

@@ -1,0 +1,5 @@
+{
+  "run_id": "010_model=xattn__backbone=smallcnn__features=image+mean+meta__meta_encoder=flair",
+  "rc": 0,
+  "secs": 404.18
+}

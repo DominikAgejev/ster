@@ -1,0 +1,80 @@
+# src/configs/results/no-bg2.yaml
+base:
+  # --- logging: separate roots per config ---
+  logdir: ./runs/results/no-bg2
+  outdir: ./checkpoints/results/no-bg2
+
+  # --- data ---
+  images_dir: /home/data/Pantone/cropped-256-ada
+  included_folders: "focus"
+  json_dir:   /home/data/Pantone/original
+  labels_csv: /home/data/Pantone/gt/pantone_labels.csv
+  group_split: class
+
+  # --- training defaults ---
+  epochs: 100
+  batch_size: 32
+  val_split: 0.15
+  seed: 101
+
+  color_space: rgb
+  pred_activation: sigmoid_eps
+
+  # losses
+  mse_space: rgb
+  mse_weight_start: 1.0
+  mse_weight_epochs: 75
+  robust: huber
+
+  # optimizer/schedule bound to smallcnn
+  optim: adamw
+  weight_decay: 0.0001
+  lr_schedule: cosine
+  meta_encoder: none
+  token_stage: "-2" 
+  # pruning & checkpoints
+  prune_short_runs: false
+  min_keep_epochs: 0
+  save_top_k: 0
+  save_last: false
+  ckpt_monitor: de00
+  ckpt_mode: min
+
+  # early stopping
+  early_stop_patience: 10
+  early_stop_min_delta: 0.008
+  early_stop_monitor: de00
+  early_stop_mode: min
+  early_stop_min_epoch: 25
+  restore_best_on_stop: true
+
+report:
+  keep_from_base: [images_dir, included_folders, epochs, mse_weight_epochs, 
+    optim, lr_auto, lr_schedule, weight_decay]
+  extra_group_keys: [model]
+  top_k: 20
+
+grid:
+  model: [late, film, xattn]
+  backbone: [smallcnn, resnet18]
+  features: [image, image+mean, image+meta, image+mean+meta]
+
+
+stages:
+  - name: fast
+    overrides:
+      amp: true
+      epochs: 1
+      early_stop_min_epoch: 2
+      early_stop_patience: 8
+      save_top_k: 1
+      save_last: false
+    keep_top_k: 100
+    eval_top_k: 100
+  - name: full
+    overrides:
+      epochs: 100
+      early_stop_min_epoch: 50
+      early_stop_patience: 10
+      save_top_k: 1
+      save_last: false

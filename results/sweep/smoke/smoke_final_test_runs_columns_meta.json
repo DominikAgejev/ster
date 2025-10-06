@@ -1,0 +1,37 @@
+{
+  "grid_keys": [
+    "model",
+    "backbone",
+    "features",
+    "included_folders",
+    "meta_encoder",
+    "meta_layers",
+    "meta_text_template"
+  ],
+  "report_keep": [],
+  "constants": [
+    "epochs",
+    "batch_size",
+    "lr",
+    "weight_decay",
+    "mse_weight_epochs",
+    "val_split",
+    "color_space",
+    "meta_model_name",
+    "lr_auto",
+    "lr_schedule",
+    "optim"
+  ],
+  "top_cols": [
+    "run_id",
+    "model",
+    "backbone",
+    "features",
+    "included_folders",
+    "meta_encoder",
+    "meta_layers",
+    "meta_text_template",
+    "best_metric",
+    "best_epoch"
+  ]
+}

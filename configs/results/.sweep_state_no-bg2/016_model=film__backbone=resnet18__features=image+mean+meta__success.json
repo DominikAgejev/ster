@@ -1,0 +1,5 @@
+{
+  "run_id": "016_model=film__backbone=resnet18__features=image+mean+meta",
+  "rc": 0,
+  "secs": 389.41
+}

@@ -1,0 +1,8 @@
+run_id,best_metric,best_epoch,ckpt_path,model,backbone,color_space,features,group_split,epochs,batch_size,lr,weight_decay,mse_space,mse_weight_start,mse_weight_epochs,pred_activation,activation_eps,seed
+6495959e9a58,2.392154035114107,41,/home/dominik/repo/checkpoints/sweep/debug/xattn_resnet18_e041_de002.3922.pt,xattn,resnet18,rgb,image+mean+meta,class,50,32,0.001,0.0001,rgb,1.0,50,sigmoid_eps,0.001,100
+1590a8b16249,8.382803322612375,3,/home/dominik/repo/checkpoints/sweep/debug/xattn_resnet18_e003_de008.3828.pt,xattn,resnet18,rgb,image+mean+meta,folder,50,32,0.001,0.0001,rgb,1.0,10,sigmoid_eps,0.001,100
+505c526ae1bf,9.349140229432479,27,/home/dominik/repo/checkpoints/sweep/debug/xattn_resnet18_e027_de009.3491.pt,xattn,resnet18,rgb,image+mean+meta,folder,50,32,0.001,0.0001,rgb,1.0,50,sigmoid_eps,0.001,100
+12f41ff69cca,2.3759183088938394,41,/home/dominik/repo/checkpoints/sweep/debug/xattn_resnet18_e041_de002.3759.pt,xattn,resnet18,rgb,image+mean+meta,class,50,32,0.001,0.0001,rgb,1.0,50,sigmoid_eps,0.001,100
+70aedc67000c,2.9529067044970634,44,/home/dominik/repo/checkpoints/sweep/debug/xattn_resnet18_e044_de002.9529.pt,xattn,resnet18,rgb,image+mean+meta,class,50,32,0.001,0.0001,rgb,1.0,10,sigmoid_eps,0.001,100
+f812b594346c,2.964945897288706,44,/home/dominik/repo/checkpoints/sweep/debug/xattn_resnet18_e044_de002.9649.pt,xattn,resnet18,rgb,image+mean+meta,class,50,32,0.001,0.0001,rgb,1.0,50,sigmoid_eps,0.001,100
+8ac548e29eb9,2.368576004391625,49,/home/dominik/repo/checkpoints/sweep/debug/xattn_resnet18_e049_de002.3686.pt,xattn,resnet18,rgb,image+mean+meta,class,50,32,0.001,0.0001,rgb,1.0,10,sigmoid_eps,0.001,100

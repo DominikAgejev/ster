@@ -1,0 +1,5 @@
+model,backbone,features,best_metric_A_best,best_metric_B_best,delta_best_B_minus_A,verdict_best
+late,resnet18,image+mean+meta,2.678055832184941,2.724760495036481,0.04670466285153996,worse
+late,resnet18,image+meta,2.874685633567072,2.738185178802674,-0.13650045476439798,better
+late,smallcnn,image+mean+meta,2.549168678651373,2.252882012401719,-0.2962866662496544,better
+late,smallcnn,image+meta,2.344339949538909,2.2543776408735527,-0.08996230866535626,better

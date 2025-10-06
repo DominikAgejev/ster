@@ -1,0 +1,4 @@
+model,backbone,features,mse_weight_epochs,best_metric_A_best,best_metric_B_best,delta_best_B_minus_A,verdict_best
+film,smallcnn,image,75,3.720765575530037,2.7136191617874874,-1.0071464137425497,better
+late,smallcnn,image,75,3.749715544685485,2.8902480080014183,-0.8594675366840665,better
+xattn,smallcnn,image,75,3.88299442472912,2.5699148980398028,-1.3130795266893172,better

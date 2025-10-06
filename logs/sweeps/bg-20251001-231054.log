@@ -1,0 +1,652 @@
+[sweep] === ./configs/results/bg.yaml ===
+[sweep] cmd: python [sweep] cmd: -u [sweep] cmd: -m [sweep] cmd: src.engine.sweep [sweep] cmd: --config [sweep] cmd: ./configs/results/bg.yaml [sweep] cmd: --only_full [sweep] cmd: --auto-summary [sweep] cmd: --analysis [sweep] cmd: --eval-winners [sweep] cmd: --test_split_file [sweep] cmd: AUTO [sweep] cmd: --skip-existing 
+[sweep] FULL-only mode: training full stage for all runs.
+[sweep] === Run 1/24 ===
+[sweep] id=001_model=late__backbone=smallcnn__features=image
+[run]  python -m src.engine.experiment --images_dir /home/data/Pantone/cropped-merged-256 --json_dir /home/data/Pantone/original --labels_csv /home/data/Pantone/gt/pantone_labels.csv --outdir ./checkpoints/results/no-bg/full --logdir ./runs/results/no-bg/full --included_folders focus --group_split class --epochs 100 --batch_size 32 --val_split 0.15 --seed 101 --color_space rgb --pred_activation sigmoid_eps --mse_space rgb --mse_weight_start 1.0 --mse_weight_epochs 75 --robust huber --optim adamw --weight_decay 0.0001 --lr_schedule cosine --meta_encoder none --token_stage=-2 --min_keep_epochs 0 --save_top_k 1 --ckpt_monitor de00 --ckpt_mode min --early_stop_patience 10 --early_stop_min_delta 0.008 --early_stop_monitor de00 --early_stop_mode min --early_stop_min_epoch 60 --restore_best_on_stop --model late --backbone smallcnn --features image --tag_keys model backbone features
+[split] Included 2070/2070 samples by folders ['focus'] (subdirs included)
+[split] train=1755 val=315
+[diag] diag_start: model=late, backbone=smallcnn, features=image, meta_encoder=none
+[run] model=late backbone=smallcnn train=1755 val=315 epochs=100 optim=adamw lr=0.00100 wd=0.0001 momentum=— schedule=cosine
+
+[early] stop at epoch 76 (best de00=2.5474 @ 66)
+[done] best ΔE00=2.547 over 76 epochs
+[eval] Wrote final summary → ./checkpoints/results/no-bg/full/late__smallcnn__image__-focus-__layersnone__ts-2__s101__model=late__backbone=smallcnn__features=image/final_summary.json (kind=val)
+[sweep] === Run 2/24 ===
+[sweep] id=002_model=late__backbone=smallcnn__features=image+mean
+[run]  python -m src.engine.experiment --images_dir /home/data/Pantone/cropped-merged-256 --json_dir /home/data/Pantone/original --labels_csv /home/data/Pantone/gt/pantone_labels.csv --outdir ./checkpoints/results/no-bg/full --logdir ./runs/results/no-bg/full --included_folders focus --group_split class --epochs 100 --batch_size 32 --val_split 0.15 --seed 101 --color_space rgb --pred_activation sigmoid_eps --mse_space rgb --mse_weight_start 1.0 --mse_weight_epochs 75 --robust huber --optim adamw --weight_decay 0.0001 --lr_schedule cosine --meta_encoder none --token_stage=-2 --min_keep_epochs 0 --save_top_k 1 --ckpt_monitor de00 --ckpt_mode min --early_stop_patience 10 --early_stop_min_delta 0.008 --early_stop_monitor de00 --early_stop_mode min --early_stop_min_epoch 60 --restore_best_on_stop --model late --backbone smallcnn --features image+mean --tag_keys model backbone features
+[split] Included 2070/2070 samples by folders ['focus'] (subdirs included)
+[split] train=1755 val=315
+[diag] diag_start: model=late, backbone=smallcnn, features=image+mean, meta_encoder=none
+[run] model=late backbone=smallcnn train=1755 val=315 epochs=100 optim=adamw lr=0.00100 wd=0.0001 momentum=— schedule=cosine
+
+[early] stop at epoch 90 (best de00=2.1979 @ 80)
+[done] best ΔE00=2.198 over 90 epochs
+[eval] Wrote final summary → ./checkpoints/results/no-bg/full/late__smallcnn__image+mean__-focus-__layersnone__ts-2__s101__model=late__backbone=smallcnn__features=image+mean/final_summary.json (kind=val)
+[sweep] === Run 3/24 ===
+[sweep] id=003_model=late__backbone=smallcnn__features=image+meta
+[run]  python -m src.engine.experiment --images_dir /home/data/Pantone/cropped-merged-256 --json_dir /home/data/Pantone/original --labels_csv /home/data/Pantone/gt/pantone_labels.csv --outdir ./checkpoints/results/no-bg/full --logdir ./runs/results/no-bg/full --included_folders focus --group_split class --epochs 100 --batch_size 32 --val_split 0.15 --seed 101 --color_space rgb --pred_activation sigmoid_eps --mse_space rgb --mse_weight_start 1.0 --mse_weight_epochs 75 --robust huber --optim adamw --weight_decay 0.0001 --lr_schedule cosine --meta_encoder none --token_stage=-2 --min_keep_epochs 0 --save_top_k 1 --ckpt_monitor de00 --ckpt_mode min --early_stop_patience 10 --early_stop_min_delta 0.008 --early_stop_monitor de00 --early_stop_mode min --early_stop_min_epoch 60 --restore_best_on_stop --model late --backbone smallcnn --features image+meta --tag_keys model backbone features
+[split] Included 2070/2070 samples by folders ['focus'] (subdirs included)
+[split] train=1755 val=315
+[diag] diag_start: model=late, backbone=smallcnn, features=image+meta, meta_encoder=none
+[run] model=late backbone=smallcnn train=1755 val=315 epochs=100 optim=adamw lr=0.00100 wd=0.0001 momentum=— schedule=cosine
+
+[early] stop at epoch 69 (best de00=2.4309 @ 58)
+[done] best ΔE00=2.431 over 69 epochs
+[eval] Wrote final summary → ./checkpoints/results/no-bg/full/late__smallcnn__image+meta__-focus-__layersnone__ts-2__s101__model=late__backbone=smallcnn__features=image+meta/final_summary.json (kind=val)
+[sweep] === Run 4/24 ===
+[sweep] id=004_model=late__backbone=smallcnn__features=image+mean+meta
+[run]  python -m src.engine.experiment --images_dir /home/data/Pantone/cropped-merged-256 --json_dir /home/data/Pantone/original --labels_csv /home/data/Pantone/gt/pantone_labels.csv --outdir ./checkpoints/results/no-bg/full --logdir ./runs/results/no-bg/full --included_folders focus --group_split class --epochs 100 --batch_size 32 --val_split 0.15 --seed 101 --color_space rgb --pred_activation sigmoid_eps --mse_space rgb --mse_weight_start 1.0 --mse_weight_epochs 75 --robust huber --optim adamw --weight_decay 0.0001 --lr_schedule cosine --meta_encoder none --token_stage=-2 --min_keep_epochs 0 --save_top_k 1 --ckpt_monitor de00 --ckpt_mode min --early_stop_patience 10 --early_stop_min_delta 0.008 --early_stop_monitor de00 --early_stop_mode min --early_stop_min_epoch 60 --restore_best_on_stop --model late --backbone smallcnn --features image+mean+meta --tag_keys model backbone features
+[split] Included 2070/2070 samples by folders ['focus'] (subdirs included)
+[split] train=1755 val=315
+[diag] diag_start: model=late, backbone=smallcnn, features=image+mean+meta, meta_encoder=none
+[run] model=late backbone=smallcnn train=1755 val=315 epochs=100 optim=adamw lr=0.00100 wd=0.0001 momentum=— schedule=cosine
+
+[early] stop at epoch 69 (best de00=2.1169 @ 57)
+[done] best ΔE00=2.117 over 69 epochs
+[eval] Wrote final summary → ./checkpoints/results/no-bg/full/late__smallcnn__image+mean+meta__-focus-__layersnone__ts-2__s101__model=late__backbone=smallcnn__features=image+mean+meta/final_summary.json (kind=val)
+[sweep] === Run 5/24 ===
+[sweep] id=005_model=late__backbone=resnet18__features=image
+[run]  python -m src.engine.experiment --images_dir /home/data/Pantone/cropped-merged-256 --json_dir /home/data/Pantone/original --labels_csv /home/data/Pantone/gt/pantone_labels.csv --outdir ./checkpoints/results/no-bg/full --logdir ./runs/results/no-bg/full --included_folders focus --group_split class --epochs 100 --batch_size 32 --val_split 0.15 --seed 101 --color_space rgb --pred_activation sigmoid_eps --mse_space rgb --mse_weight_start 1.0 --mse_weight_epochs 75 --robust huber --optim adamw --weight_decay 0.0001 --lr_schedule cosine --meta_encoder none --token_stage=-2 --min_keep_epochs 0 --save_top_k 1 --ckpt_monitor de00 --ckpt_mode min --early_stop_patience 10 --early_stop_min_delta 0.008 --early_stop_monitor de00 --early_stop_mode min --early_stop_min_epoch 60 --restore_best_on_stop --model late --backbone resnet18 --features image --tag_keys model backbone features
+[split] Included 2070/2070 samples by folders ['focus'] (subdirs included)
+[split] train=1755 val=315
+[diag] diag_start: model=late, backbone=resnet18, features=image, meta_encoder=none
+[run] model=late backbone=resnet18 train=1755 val=315 epochs=100 optim=adamw lr=0.00100 wd=0.0001 momentum=— schedule=cosine
+
+[early] stop at epoch 69 (best de00=2.1335 @ 55)
+[done] best ΔE00=2.134 over 69 epochs
+[eval] Wrote final summary → ./checkpoints/results/no-bg/full/late__resnet18__image__-focus-__layersnone__ts-2__s101__model=late__backbone=resnet18__features=image/final_summary.json (kind=val)
+[sweep] === Run 6/24 ===
+[sweep] id=006_model=late__backbone=resnet18__features=image+mean
+[run]  python -m src.engine.experiment --images_dir /home/data/Pantone/cropped-merged-256 --json_dir /home/data/Pantone/original --labels_csv /home/data/Pantone/gt/pantone_labels.csv --outdir ./checkpoints/results/no-bg/full --logdir ./runs/results/no-bg/full --included_folders focus --group_split class --epochs 100 --batch_size 32 --val_split 0.15 --seed 101 --color_space rgb --pred_activation sigmoid_eps --mse_space rgb --mse_weight_start 1.0 --mse_weight_epochs 75 --robust huber --optim adamw --weight_decay 0.0001 --lr_schedule cosine --meta_encoder none --token_stage=-2 --min_keep_epochs 0 --save_top_k 1 --ckpt_monitor de00 --ckpt_mode min --early_stop_patience 10 --early_stop_min_delta 0.008 --early_stop_monitor de00 --early_stop_mode min --early_stop_min_epoch 60 --restore_best_on_stop --model late --backbone resnet18 --features image+mean --tag_keys model backbone features
+[split] Included 2070/2070 samples by folders ['focus'] (subdirs included)
+[split] train=1755 val=315
+[diag] diag_start: model=late, backbone=resnet18, features=image+mean, meta_encoder=none
+[run] model=late backbone=resnet18 train=1755 val=315 epochs=100 optim=adamw lr=0.00100 wd=0.0001 momentum=— schedule=cosine
+
+[early] stop at epoch 71 (best de00=2.0746 @ 61)
+[done] best ΔE00=2.075 over 71 epochs
+[eval] Wrote final summary → ./checkpoints/results/no-bg/full/late__resnet18__image+mean__-focus-__layersnone__ts-2__s101__model=late__backbone=resnet18__features=image+mean/final_summary.json (kind=val)
+[sweep] === Run 7/24 ===
+[sweep] id=007_model=late__backbone=resnet18__features=image+meta
+[run]  python -m src.engine.experiment --images_dir /home/data/Pantone/cropped-merged-256 --json_dir /home/data/Pantone/original --labels_csv /home/data/Pantone/gt/pantone_labels.csv --outdir ./checkpoints/results/no-bg/full --logdir ./runs/results/no-bg/full --included_folders focus --group_split class --epochs 100 --batch_size 32 --val_split 0.15 --seed 101 --color_space rgb --pred_activation sigmoid_eps --mse_space rgb --mse_weight_start 1.0 --mse_weight_epochs 75 --robust huber --optim adamw --weight_decay 0.0001 --lr_schedule cosine --meta_encoder none --token_stage=-2 --min_keep_epochs 0 --save_top_k 1 --ckpt_monitor de00 --ckpt_mode min --early_stop_patience 10 --early_stop_min_delta 0.008 --early_stop_monitor de00 --early_stop_mode min --early_stop_min_epoch 60 --restore_best_on_stop --model late --backbone resnet18 --features image+meta --tag_keys model backbone features
+[split] Included 2070/2070 samples by folders ['focus'] (subdirs included)
+[split] train=1755 val=315
+[diag] diag_start: model=late, backbone=resnet18, features=image+meta, meta_encoder=none
+[run] model=late backbone=resnet18 train=1755 val=315 epochs=100 optim=adamw lr=0.00100 wd=0.0001 momentum=— schedule=cosine
+
+[early] stop at epoch 69 (best de00=2.1443 @ 56)
+[done] best ΔE00=2.144 over 69 epochs
+[eval] Wrote final summary → ./checkpoints/results/no-bg/full/late__resnet18__image+meta__-focus-__layersnone__ts-2__s101__model=late__backbone=resnet18__features=image+meta/final_summary.json (kind=val)
+[sweep] === Run 8/24 ===
+[sweep] id=008_model=late__backbone=resnet18__features=image+mean+meta
+[run]  python -m src.engine.experiment --images_dir /home/data/Pantone/cropped-merged-256 --json_dir /home/data/Pantone/original --labels_csv /home/data/Pantone/gt/pantone_labels.csv --outdir ./checkpoints/results/no-bg/full --logdir ./runs/results/no-bg/full --included_folders focus --group_split class --epochs 100 --batch_size 32 --val_split 0.15 --seed 101 --color_space rgb --pred_activation sigmoid_eps --mse_space rgb --mse_weight_start 1.0 --mse_weight_epochs 75 --robust huber --optim adamw --weight_decay 0.0001 --lr_schedule cosine --meta_encoder none --token_stage=-2 --min_keep_epochs 0 --save_top_k 1 --ckpt_monitor de00 --ckpt_mode min --early_stop_patience 10 --early_stop_min_delta 0.008 --early_stop_monitor de00 --early_stop_mode min --early_stop_min_epoch 60 --restore_best_on_stop --model late --backbone resnet18 --features image+mean+meta --tag_keys model backbone features
+[split] Included 2070/2070 samples by folders ['focus'] (subdirs included)
+[split] train=1755 val=315
+[diag] diag_start: model=late, backbone=resnet18, features=image+mean+meta, meta_encoder=none
+[run] model=late backbone=resnet18 train=1755 val=315 epochs=100 optim=adamw lr=0.00100 wd=0.0001 momentum=— schedule=cosine
+
+[early] stop at epoch 79 (best de00=2.0799 @ 69)
+[done] best ΔE00=2.080 over 79 epochs
+[eval] Wrote final summary → ./checkpoints/results/no-bg/full/late__resnet18__image+mean+meta__-focus-__layersnone__ts-2__s101__model=late__backbone=resnet18__features=image+mean+meta/final_summary.json (kind=val)
+[sweep] === Run 9/24 ===
+[sweep] id=009_model=film__backbone=smallcnn__features=image
+[run]  python -m src.engine.experiment --images_dir /home/data/Pantone/cropped-merged-256 --json_dir /home/data/Pantone/original --labels_csv /home/data/Pantone/gt/pantone_labels.csv --outdir ./checkpoints/results/no-bg/full --logdir ./runs/results/no-bg/full --included_folders focus --group_split class --epochs 100 --batch_size 32 --val_split 0.15 --seed 101 --color_space rgb --pred_activation sigmoid_eps --mse_space rgb --mse_weight_start 1.0 --mse_weight_epochs 75 --robust huber --optim adamw --weight_decay 0.0001 --lr_schedule cosine --meta_encoder none --token_stage=-2 --min_keep_epochs 0 --save_top_k 1 --ckpt_monitor de00 --ckpt_mode min --early_stop_patience 10 --early_stop_min_delta 0.008 --early_stop_monitor de00 --early_stop_mode min --early_stop_min_epoch 60 --restore_best_on_stop --model film --backbone smallcnn --features image --tag_keys model backbone features
+[split] Included 2070/2070 samples by folders ['focus'] (subdirs included)
+[split] train=1755 val=315
+[diag] diag_start: model=film, backbone=smallcnn, features=image, meta_encoder=none
+[run] model=film backbone=smallcnn train=1755 val=315 epochs=100 optim=adamw lr=0.00100 wd=0.0001 momentum=— schedule=cosine
+
+[early] stop at epoch 69 (best de00=2.2229 @ 57)
+[done] best ΔE00=2.223 over 69 epochs
+[eval] Wrote final summary → ./checkpoints/results/no-bg/full/film__smallcnn__image__-focus-__layersnone__ts-2__s101__model=film__backbone=smallcnn__features=image/final_summary.json (kind=val)
+[sweep] === Run 10/24 ===
+[sweep] id=010_model=film__backbone=smallcnn__features=image+mean
+[run]  python -m src.engine.experiment --images_dir /home/data/Pantone/cropped-merged-256 --json_dir /home/data/Pantone/original --labels_csv /home/data/Pantone/gt/pantone_labels.csv --outdir ./checkpoints/results/no-bg/full --logdir ./runs/results/no-bg/full --included_folders focus --group_split class --epochs 100 --batch_size 32 --val_split 0.15 --seed 101 --color_space rgb --pred_activation sigmoid_eps --mse_space rgb --mse_weight_start 1.0 --mse_weight_epochs 75 --robust huber --optim adamw --weight_decay 0.0001 --lr_schedule cosine --meta_encoder none --token_stage=-2 --min_keep_epochs 0 --save_top_k 1 --ckpt_monitor de00 --ckpt_mode min --early_stop_patience 10 --early_stop_min_delta 0.008 --early_stop_monitor de00 --early_stop_mode min --early_stop_min_epoch 60 --restore_best_on_stop --model film --backbone smallcnn --features image+mean --tag_keys model backbone features
+[split] Included 2070/2070 samples by folders ['focus'] (subdirs included)
+[split] train=1755 val=315
+[diag] diag_start: model=film, backbone=smallcnn, features=image+mean, meta_encoder=none
+[run] model=film backbone=smallcnn train=1755 val=315 epochs=100 optim=adamw lr=0.00100 wd=0.0001 momentum=— schedule=cosine
+
+[early] stop at epoch 69 (best de00=1.9742 @ 57)
+[done] best ΔE00=1.974 over 69 epochs
+[eval] Wrote final summary → ./checkpoints/results/no-bg/full/film__smallcnn__image+mean__-focus-__layersnone__ts-2__s101__model=film__backbone=smallcnn__features=image+mean/final_summary.json (kind=val)
+[sweep] === Run 11/24 ===
+[sweep] id=011_model=film__backbone=smallcnn__features=image+meta
+[run]  python -m src.engine.experiment --images_dir /home/data/Pantone/cropped-merged-256 --json_dir /home/data/Pantone/original --labels_csv /home/data/Pantone/gt/pantone_labels.csv --outdir ./checkpoints/results/no-bg/full --logdir ./runs/results/no-bg/full --included_folders focus --group_split class --epochs 100 --batch_size 32 --val_split 0.15 --seed 101 --color_space rgb --pred_activation sigmoid_eps --mse_space rgb --mse_weight_start 1.0 --mse_weight_epochs 75 --robust huber --optim adamw --weight_decay 0.0001 --lr_schedule cosine --meta_encoder none --token_stage=-2 --min_keep_epochs 0 --save_top_k 1 --ckpt_monitor de00 --ckpt_mode min --early_stop_patience 10 --early_stop_min_delta 0.008 --early_stop_monitor de00 --early_stop_mode min --early_stop_min_epoch 60 --restore_best_on_stop --model film --backbone smallcnn --features image+meta --tag_keys model backbone features
+[split] Included 2070/2070 samples by folders ['focus'] (subdirs included)
+[split] train=1755 val=315
+[diag] diag_start: model=film, backbone=smallcnn, features=image+meta, meta_encoder=none
+[run] model=film backbone=smallcnn train=1755 val=315 epochs=100 optim=adamw lr=0.00100 wd=0.0001 momentum=— schedule=cosine
+
+[early] stop at epoch 71 (best de00=2.3291 @ 61)
+[done] best ΔE00=2.329 over 71 epochs
+[eval] Wrote final summary → ./checkpoints/results/no-bg/full/film__smallcnn__image+meta__-focus-__layersnone__ts-2__s101__model=film__backbone=smallcnn__features=image+meta/final_summary.json (kind=val)
+[sweep] === Run 12/24 ===
+[sweep] id=012_model=film__backbone=smallcnn__features=image+mean+meta
+[run]  python -m src.engine.experiment --images_dir /home/data/Pantone/cropped-merged-256 --json_dir /home/data/Pantone/original --labels_csv /home/data/Pantone/gt/pantone_labels.csv --outdir ./checkpoints/results/no-bg/full --logdir ./runs/results/no-bg/full --included_folders focus --group_split class --epochs 100 --batch_size 32 --val_split 0.15 --seed 101 --color_space rgb --pred_activation sigmoid_eps --mse_space rgb --mse_weight_start 1.0 --mse_weight_epochs 75 --robust huber --optim adamw --weight_decay 0.0001 --lr_schedule cosine --meta_encoder none --token_stage=-2 --min_keep_epochs 0 --save_top_k 1 --ckpt_monitor de00 --ckpt_mode min --early_stop_patience 10 --early_stop_min_delta 0.008 --early_stop_monitor de00 --early_stop_mode min --early_stop_min_epoch 60 --restore_best_on_stop --model film --backbone smallcnn --features image+mean+meta --tag_keys model backbone features
+[split] Included 2070/2070 samples by folders ['focus'] (subdirs included)
+[split] train=1755 val=315
+[diag] diag_start: model=film, backbone=smallcnn, features=image+mean+meta, meta_encoder=none
+[run] model=film backbone=smallcnn train=1755 val=315 epochs=100 optim=adamw lr=0.00100 wd=0.0001 momentum=— schedule=cosine
+
+[early] stop at epoch 69 (best de00=1.8847 @ 42)
+[done] best ΔE00=1.885 over 69 epochs
+[eval] Wrote final summary → ./checkpoints/results/no-bg/full/film__smallcnn__image+mean+meta__-focus-__layersnone__ts-2__s101__model=film__backbone=smallcnn__features=image+mean+meta/final_summary.json (kind=val)
+[sweep] === Run 13/24 ===
+[sweep] id=013_model=film__backbone=resnet18__features=image
+[run]  python -m src.engine.experiment --images_dir /home/data/Pantone/cropped-merged-256 --json_dir /home/data/Pantone/original --labels_csv /home/data/Pantone/gt/pantone_labels.csv --outdir ./checkpoints/results/no-bg/full --logdir ./runs/results/no-bg/full --included_folders focus --group_split class --epochs 100 --batch_size 32 --val_split 0.15 --seed 101 --color_space rgb --pred_activation sigmoid_eps --mse_space rgb --mse_weight_start 1.0 --mse_weight_epochs 75 --robust huber --optim adamw --weight_decay 0.0001 --lr_schedule cosine --meta_encoder none --token_stage=-2 --min_keep_epochs 0 --save_top_k 1 --ckpt_monitor de00 --ckpt_mode min --early_stop_patience 10 --early_stop_min_delta 0.008 --early_stop_monitor de00 --early_stop_mode min --early_stop_min_epoch 60 --restore_best_on_stop --model film --backbone resnet18 --features image --tag_keys model backbone features
+[split] Included 2070/2070 samples by folders ['focus'] (subdirs included)
+[split] train=1755 val=315
+[diag] diag_start: model=film, backbone=resnet18, features=image, meta_encoder=none
+[run] model=film backbone=resnet18 train=1755 val=315 epochs=100 optim=adamw lr=0.00100 wd=0.0001 momentum=— schedule=cosine
+
+[early] stop at epoch 69 (best de00=1.8992 @ 44)
+[done] best ΔE00=1.899 over 69 epochs
+[eval] Wrote final summary → ./checkpoints/results/no-bg/full/film__resnet18__image__-focus-__layersnone__ts-2__s101__model=film__backbone=resnet18__features=image/final_summary.json (kind=val)
+[sweep] === Run 14/24 ===
+[sweep] id=014_model=film__backbone=resnet18__features=image+mean
+[run]  python -m src.engine.experiment --images_dir /home/data/Pantone/cropped-merged-256 --json_dir /home/data/Pantone/original --labels_csv /home/data/Pantone/gt/pantone_labels.csv --outdir ./checkpoints/results/no-bg/full --logdir ./runs/results/no-bg/full --included_folders focus --group_split class --epochs 100 --batch_size 32 --val_split 0.15 --seed 101 --color_space rgb --pred_activation sigmoid_eps --mse_space rgb --mse_weight_start 1.0 --mse_weight_epochs 75 --robust huber --optim adamw --weight_decay 0.0001 --lr_schedule cosine --meta_encoder none --token_stage=-2 --min_keep_epochs 0 --save_top_k 1 --ckpt_monitor de00 --ckpt_mode min --early_stop_patience 10 --early_stop_min_delta 0.008 --early_stop_monitor de00 --early_stop_mode min --early_stop_min_epoch 60 --restore_best_on_stop --model film --backbone resnet18 --features image+mean --tag_keys model backbone features
+[split] Included 2070/2070 samples by folders ['focus'] (subdirs included)
+[split] train=1755 val=315
+[diag] diag_start: model=film, backbone=resnet18, features=image+mean, meta_encoder=none
+[run] model=film backbone=resnet18 train=1755 val=315 epochs=100 optim=adamw lr=0.00100 wd=0.0001 momentum=— schedule=cosine
+
+[early] stop at epoch 69 (best de00=1.9364 @ 48)
+[done] best ΔE00=1.934 over 69 epochs
+[eval] Wrote final summary → ./checkpoints/results/no-bg/full/film__resnet18__image+mean__-focus-__layersnone__ts-2__s101__model=film__backbone=resnet18__features=image+mean/final_summary.json (kind=val)
+[sweep] === Run 15/24 ===
+[sweep] id=015_model=film__backbone=resnet18__features=image+meta
+[run]  python -m src.engine.experiment --images_dir /home/data/Pantone/cropped-merged-256 --json_dir /home/data/Pantone/original --labels_csv /home/data/Pantone/gt/pantone_labels.csv --outdir ./checkpoints/results/no-bg/full --logdir ./runs/results/no-bg/full --included_folders focus --group_split class --epochs 100 --batch_size 32 --val_split 0.15 --seed 101 --color_space rgb --pred_activation sigmoid_eps --mse_space rgb --mse_weight_start 1.0 --mse_weight_epochs 75 --robust huber --optim adamw --weight_decay 0.0001 --lr_schedule cosine --meta_encoder none --token_stage=-2 --min_keep_epochs 0 --save_top_k 1 --ckpt_monitor de00 --ckpt_mode min --early_stop_patience 10 --early_stop_min_delta 0.008 --early_stop_monitor de00 --early_stop_mode min --early_stop_min_epoch 60 --restore_best_on_stop --model film --backbone resnet18 --features image+meta --tag_keys model backbone features
+[split] Included 2070/2070 samples by folders ['focus'] (subdirs included)
+[split] train=1755 val=315
+[diag] diag_start: model=film, backbone=resnet18, features=image+meta, meta_encoder=none
+[run] model=film backbone=resnet18 train=1755 val=315 epochs=100 optim=adamw lr=0.00100 wd=0.0001 momentum=— schedule=cosine
+
+[early] stop at epoch 69 (best de00=1.9745 @ 55)
+[done] best ΔE00=1.974 over 69 epochs
+[eval] Wrote final summary → ./checkpoints/results/no-bg/full/film__resnet18__image+meta__-focus-__layersnone__ts-2__s101__model=film__backbone=resnet18__features=image+meta/final_summary.json (kind=val)
+[sweep] === Run 16/24 ===
+[sweep] id=016_model=film__backbone=resnet18__features=image+mean+meta
+[run]  python -m src.engine.experiment --images_dir /home/data/Pantone/cropped-merged-256 --json_dir /home/data/Pantone/original --labels_csv /home/data/Pantone/gt/pantone_labels.csv --outdir ./checkpoints/results/no-bg/full --logdir ./runs/results/no-bg/full --included_folders focus --group_split class --epochs 100 --batch_size 32 --val_split 0.15 --seed 101 --color_space rgb --pred_activation sigmoid_eps --mse_space rgb --mse_weight_start 1.0 --mse_weight_epochs 75 --robust huber --optim adamw --weight_decay 0.0001 --lr_schedule cosine --meta_encoder none --token_stage=-2 --min_keep_epochs 0 --save_top_k 1 --ckpt_monitor de00 --ckpt_mode min --early_stop_patience 10 --early_stop_min_delta 0.008 --early_stop_monitor de00 --early_stop_mode min --early_stop_min_epoch 60 --restore_best_on_stop --model film --backbone resnet18 --features image+mean+meta --tag_keys model backbone features
+[split] Included 2070/2070 samples by folders ['focus'] (subdirs included)
+[split] train=1755 val=315
+[diag] diag_start: model=film, backbone=resnet18, features=image+mean+meta, meta_encoder=none
+[run] model=film backbone=resnet18 train=1755 val=315 epochs=100 optim=adamw lr=0.00100 wd=0.0001 momentum=— schedule=cosine
+
+[early] stop at epoch 77 (best de00=1.8758 @ 67)
+[done] best ΔE00=1.876 over 77 epochs
+[eval] Wrote final summary → ./checkpoints/results/no-bg/full/film__resnet18__image+mean+meta__-focus-__layersnone__ts-2__s101__model=film__backbone=resnet18__features=image+mean+meta/final_summary.json (kind=val)
+[sweep] === Run 17/24 ===
+[sweep] id=017_model=xattn__backbone=smallcnn__features=image
+[run]  python -m src.engine.experiment --images_dir /home/data/Pantone/cropped-merged-256 --json_dir /home/data/Pantone/original --labels_csv /home/data/Pantone/gt/pantone_labels.csv --outdir ./checkpoints/results/no-bg/full --logdir ./runs/results/no-bg/full --included_folders focus --group_split class --epochs 100 --batch_size 32 --val_split 0.15 --seed 101 --color_space rgb --pred_activation sigmoid_eps --mse_space rgb --mse_weight_start 1.0 --mse_weight_epochs 75 --robust huber --optim adamw --weight_decay 0.0001 --lr_schedule cosine --meta_encoder none --token_stage=-2 --min_keep_epochs 0 --save_top_k 1 --ckpt_monitor de00 --ckpt_mode min --early_stop_patience 10 --early_stop_min_delta 0.008 --early_stop_monitor de00 --early_stop_mode min --early_stop_min_epoch 60 --restore_best_on_stop --model xattn --backbone smallcnn --features image --tag_keys model backbone features
+[split] Included 2070/2070 samples by folders ['focus'] (subdirs included)
+[split] train=1755 val=315
+[diag] diag_start: model=xattn, backbone=smallcnn, features=image, meta_encoder=none
+[run] model=xattn backbone=smallcnn train=1755 val=315 epochs=100 optim=adamw lr=0.00100 wd=0.0001 momentum=— schedule=cosine
+
+[early] stop at epoch 82 (best de00=2.3082 @ 72)
+[done] best ΔE00=2.308 over 82 epochs
+[eval] Wrote final summary → ./checkpoints/results/no-bg/full/xattn__smallcnn__image__-focus-__layersnone__ts-2__s101__model=xattn__backbone=smallcnn__features=image/final_summary.json (kind=val)
+[sweep] === Run 18/24 ===
+[sweep] id=018_model=xattn__backbone=smallcnn__features=image+mean
+[run]  python -m src.engine.experiment --images_dir /home/data/Pantone/cropped-merged-256 --json_dir /home/data/Pantone/original --labels_csv /home/data/Pantone/gt/pantone_labels.csv --outdir ./checkpoints/results/no-bg/full --logdir ./runs/results/no-bg/full --included_folders focus --group_split class --epochs 100 --batch_size 32 --val_split 0.15 --seed 101 --color_space rgb --pred_activation sigmoid_eps --mse_space rgb --mse_weight_start 1.0 --mse_weight_epochs 75 --robust huber --optim adamw --weight_decay 0.0001 --lr_schedule cosine --meta_encoder none --token_stage=-2 --min_keep_epochs 0 --save_top_k 1 --ckpt_monitor de00 --ckpt_mode min --early_stop_patience 10 --early_stop_min_delta 0.008 --early_stop_monitor de00 --early_stop_mode min --early_stop_min_epoch 60 --restore_best_on_stop --model xattn --backbone smallcnn --features image+mean --tag_keys model backbone features
+[split] Included 2070/2070 samples by folders ['focus'] (subdirs included)
+[split] train=1755 val=315
+[diag] diag_start: model=xattn, backbone=smallcnn, features=image+mean, meta_encoder=none
+[run] model=xattn backbone=smallcnn train=1755 val=315 epochs=100 optim=adamw lr=0.00100 wd=0.0001 momentum=— schedule=cosine
+
+[early] stop at epoch 77 (best de00=1.7966 @ 67)
+[done] best ΔE00=1.797 over 77 epochs
+[eval] Wrote final summary → ./checkpoints/results/no-bg/full/xattn__smallcnn__image+mean__-focus-__layersnone__ts-2__s101__model=xattn__backbone=smallcnn__features=image+mean/final_summary.json (kind=val)
+[sweep] === Run 19/24 ===
+[sweep] id=019_model=xattn__backbone=smallcnn__features=image+meta
+[run]  python -m src.engine.experiment --images_dir /home/data/Pantone/cropped-merged-256 --json_dir /home/data/Pantone/original --labels_csv /home/data/Pantone/gt/pantone_labels.csv --outdir ./checkpoints/results/no-bg/full --logdir ./runs/results/no-bg/full --included_folders focus --group_split class --epochs 100 --batch_size 32 --val_split 0.15 --seed 101 --color_space rgb --pred_activation sigmoid_eps --mse_space rgb --mse_weight_start 1.0 --mse_weight_epochs 75 --robust huber --optim adamw --weight_decay 0.0001 --lr_schedule cosine --meta_encoder none --token_stage=-2 --min_keep_epochs 0 --save_top_k 1 --ckpt_monitor de00 --ckpt_mode min --early_stop_patience 10 --early_stop_min_delta 0.008 --early_stop_monitor de00 --early_stop_mode min --early_stop_min_epoch 60 --restore_best_on_stop --model xattn --backbone smallcnn --features image+meta --tag_keys model backbone features
+[split] Included 2070/2070 samples by folders ['focus'] (subdirs included)
+[split] train=1755 val=315
+[diag] diag_start: model=xattn, backbone=smallcnn, features=image+meta, meta_encoder=none
+[run] model=xattn backbone=smallcnn train=1755 val=315 epochs=100 optim=adamw lr=0.00100 wd=0.0001 momentum=— schedule=cosine
+
+[early] stop at epoch 74 (best de00=1.9614 @ 64)
+[done] best ΔE00=1.961 over 74 epochs
+[eval] Wrote final summary → ./checkpoints/results/no-bg/full/xattn__smallcnn__image+meta__-focus-__layersnone__ts-2__s101__model=xattn__backbone=smallcnn__features=image+meta/final_summary.json (kind=val)
+[sweep] === Run 20/24 ===
+[sweep] id=020_model=xattn__backbone=smallcnn__features=image+mean+meta
+[run]  python -m src.engine.experiment --images_dir /home/data/Pantone/cropped-merged-256 --json_dir /home/data/Pantone/original --labels_csv /home/data/Pantone/gt/pantone_labels.csv --outdir ./checkpoints/results/no-bg/full --logdir ./runs/results/no-bg/full --included_folders focus --group_split class --epochs 100 --batch_size 32 --val_split 0.15 --seed 101 --color_space rgb --pred_activation sigmoid_eps --mse_space rgb --mse_weight_start 1.0 --mse_weight_epochs 75 --robust huber --optim adamw --weight_decay 0.0001 --lr_schedule cosine --meta_encoder none --token_stage=-2 --min_keep_epochs 0 --save_top_k 1 --ckpt_monitor de00 --ckpt_mode min --early_stop_patience 10 --early_stop_min_delta 0.008 --early_stop_monitor de00 --early_stop_mode min --early_stop_min_epoch 60 --restore_best_on_stop --model xattn --backbone smallcnn --features image+mean+meta --tag_keys model backbone features
+[split] Included 2070/2070 samples by folders ['focus'] (subdirs included)
+[split] train=1755 val=315
+[diag] diag_start: model=xattn, backbone=smallcnn, features=image+mean+meta, meta_encoder=none
+[run] model=xattn backbone=smallcnn train=1755 val=315 epochs=100 optim=adamw lr=0.00100 wd=0.0001 momentum=— schedule=cosine
+
+[early] stop at epoch 73 (best de00=1.7373 @ 63)
+[done] best ΔE00=1.737 over 73 epochs
+[eval] Wrote final summary → ./checkpoints/results/no-bg/full/xattn__smallcnn__image+mean+meta__-focus-__layersnone__ts-2__s101__model=xattn__backbone=smallcnn__features=image+mean+meta/final_summary.json (kind=val)
+[sweep] === Run 21/24 ===
+[sweep] id=021_model=xattn__backbone=resnet18__features=image
+[run]  python -m src.engine.experiment --images_dir /home/data/Pantone/cropped-merged-256 --json_dir /home/data/Pantone/original --labels_csv /home/data/Pantone/gt/pantone_labels.csv --outdir ./checkpoints/results/no-bg/full --logdir ./runs/results/no-bg/full --included_folders focus --group_split class --epochs 100 --batch_size 32 --val_split 0.15 --seed 101 --color_space rgb --pred_activation sigmoid_eps --mse_space rgb --mse_weight_start 1.0 --mse_weight_epochs 75 --robust huber --optim adamw --weight_decay 0.0001 --lr_schedule cosine --meta_encoder none --token_stage=-2 --min_keep_epochs 0 --save_top_k 1 --ckpt_monitor de00 --ckpt_mode min --early_stop_patience 10 --early_stop_min_delta 0.008 --early_stop_monitor de00 --early_stop_mode min --early_stop_min_epoch 60 --restore_best_on_stop --model xattn --backbone resnet18 --features image --tag_keys model backbone features
+[split] Included 2070/2070 samples by folders ['focus'] (subdirs included)
+[split] train=1755 val=315
+[diag] diag_start: model=xattn, backbone=resnet18, features=image, meta_encoder=none
+[run] model=xattn backbone=resnet18 train=1755 val=315 epochs=100 optim=adamw lr=0.00100 wd=0.0001 momentum=— schedule=cosine
+
+[early] stop at epoch 69 (best de00=2.1505 @ 24)
+[done] best ΔE00=2.150 over 69 epochs
+[eval] Wrote final summary → ./checkpoints/results/no-bg/full/xattn__resnet18__image__-focus-__layersnone__ts-2__s101__model=xattn__backbone=resnet18__features=image/final_summary.json (kind=val)
+[sweep] === Run 22/24 ===
+[sweep] id=022_model=xattn__backbone=resnet18__features=image+mean
+[run]  python -m src.engine.experiment --images_dir /home/data/Pantone/cropped-merged-256 --json_dir /home/data/Pantone/original --labels_csv /home/data/Pantone/gt/pantone_labels.csv --outdir ./checkpoints/results/no-bg/full --logdir ./runs/results/no-bg/full --included_folders focus --group_split class --epochs 100 --batch_size 32 --val_split 0.15 --seed 101 --color_space rgb --pred_activation sigmoid_eps --mse_space rgb --mse_weight_start 1.0 --mse_weight_epochs 75 --robust huber --optim adamw --weight_decay 0.0001 --lr_schedule cosine --meta_encoder none --token_stage=-2 --min_keep_epochs 0 --save_top_k 1 --ckpt_monitor de00 --ckpt_mode min --early_stop_patience 10 --early_stop_min_delta 0.008 --early_stop_monitor de00 --early_stop_mode min --early_stop_min_epoch 60 --restore_best_on_stop --model xattn --backbone resnet18 --features image+mean --tag_keys model backbone features
+[split] Included 2070/2070 samples by folders ['focus'] (subdirs included)
+[split] train=1755 val=315
+[diag] diag_start: model=xattn, backbone=resnet18, features=image+mean, meta_encoder=none
+[run] model=xattn backbone=resnet18 train=1755 val=315 epochs=100 optim=adamw lr=0.00100 wd=0.0001 momentum=— schedule=cosine
+
+[early] stop at epoch 71 (best de00=1.9077 @ 61)
+[done] best ΔE00=1.908 over 71 epochs
+[eval] Wrote final summary → ./checkpoints/results/no-bg/full/xattn__resnet18__image+mean__-focus-__layersnone__ts-2__s101__model=xattn__backbone=resnet18__features=image+mean/final_summary.json (kind=val)
+[sweep] === Run 23/24 ===
+[sweep] id=023_model=xattn__backbone=resnet18__features=image+meta
+[run]  python -m src.engine.experiment --images_dir /home/data/Pantone/cropped-merged-256 --json_dir /home/data/Pantone/original --labels_csv /home/data/Pantone/gt/pantone_labels.csv --outdir ./checkpoints/results/no-bg/full --logdir ./runs/results/no-bg/full --included_folders focus --group_split class --epochs 100 --batch_size 32 --val_split 0.15 --seed 101 --color_space rgb --pred_activation sigmoid_eps --mse_space rgb --mse_weight_start 1.0 --mse_weight_epochs 75 --robust huber --optim adamw --weight_decay 0.0001 --lr_schedule cosine --meta_encoder none --token_stage=-2 --min_keep_epochs 0 --save_top_k 1 --ckpt_monitor de00 --ckpt_mode min --early_stop_patience 10 --early_stop_min_delta 0.008 --early_stop_monitor de00 --early_stop_mode min --early_stop_min_epoch 60 --restore_best_on_stop --model xattn --backbone resnet18 --features image+meta --tag_keys model backbone features
+[split] Included 2070/2070 samples by folders ['focus'] (subdirs included)
+[split] train=1755 val=315
+[diag] diag_start: model=xattn, backbone=resnet18, features=image+meta, meta_encoder=none
+[run] model=xattn backbone=resnet18 train=1755 val=315 epochs=100 optim=adamw lr=0.00100 wd=0.0001 momentum=— schedule=cosine
+
+[early] stop at epoch 69 (best de00=2.0349 @ 31)
+[done] best ΔE00=2.035 over 69 epochs
+[eval] Wrote final summary → ./checkpoints/results/no-bg/full/xattn__resnet18__image+meta__-focus-__layersnone__ts-2__s101__model=xattn__backbone=resnet18__features=image+meta/final_summary.json (kind=val)
+[sweep] === Run 24/24 ===
+[sweep] id=024_model=xattn__backbone=resnet18__features=image+mean+meta
+[run]  python -m src.engine.experiment --images_dir /home/data/Pantone/cropped-merged-256 --json_dir /home/data/Pantone/original --labels_csv /home/data/Pantone/gt/pantone_labels.csv --outdir ./checkpoints/results/no-bg/full --logdir ./runs/results/no-bg/full --included_folders focus --group_split class --epochs 100 --batch_size 32 --val_split 0.15 --seed 101 --color_space rgb --pred_activation sigmoid_eps --mse_space rgb --mse_weight_start 1.0 --mse_weight_epochs 75 --robust huber --optim adamw --weight_decay 0.0001 --lr_schedule cosine --meta_encoder none --token_stage=-2 --min_keep_epochs 0 --save_top_k 1 --ckpt_monitor de00 --ckpt_mode min --early_stop_patience 10 --early_stop_min_delta 0.008 --early_stop_monitor de00 --early_stop_mode min --early_stop_min_epoch 60 --restore_best_on_stop --model xattn --backbone resnet18 --features image+mean+meta --tag_keys model backbone features
+[split] Included 2070/2070 samples by folders ['focus'] (subdirs included)
+[split] train=1755 val=315
+[diag] diag_start: model=xattn, backbone=resnet18, features=image+mean+meta, meta_encoder=none
+[run] model=xattn backbone=resnet18 train=1755 val=315 epochs=100 optim=adamw lr=0.00100 wd=0.0001 momentum=— schedule=cosine
+
+[early] stop at epoch 80 (best de00=2.0523 @ 70)
+[done] best ΔE00=2.052 over 80 epochs
+[eval] Wrote final summary → ./checkpoints/results/no-bg/full/xattn__resnet18__image+mean+meta__-focus-__layersnone__ts-2__s101__model=xattn__backbone=resnet18__features=image+mean+meta/final_summary.json (kind=val)
+[summary] RUN: /home/dominik/venvs/pantone-cu121/bin/python -m src.analysis.summarize_sweep --ckpt_dir ./checkpoints/results/no-bg/full --monitor de00 --mode min --skip_bad --auto_group --report_keep images_dir included_folders epochs mse_weight_epochs optim lr_auto lr_schedule weight_decay --extra_group_keys model --include_json --out_csv /home/dominik/repo/results/results/bg/bg_full_summary_runs.csv --out_groups_csv /home/dominik/repo/results/results/bg/bg_full_summary_groups.csv --md_report /home/dominik/repo/results/results/bg/bg_full_summary_report.md --grid_keys backbone features model --prefer_test
+/home/dominik/repo/src/analysis/summarize_sweep.py:568: FutureWarning: Downcasting object dtype arrays on .fillna, .ffill, .bfill is deprecated and will change in a future version. Call result.infer_objects(copy=False) instead. To opt-in to the future behavior, set `pd.set_option('future.no_silent_downcasting', True)`
+  runs_df[col] = runs_df[col].fillna(vals[0])
+[info] Found 24 checkpoint files and 24 json summaries.
+[diag] loaded records by kind: {'val': 48}
+[ok] Wrote per-run summary: /home/dominik/repo/results/results/bg/bg_full_summary_runs.csv
+[ok] Wrote best-by-grid: /home/dominik/repo/results/results/bg/bg_full_summary_runs_best_by_grid.csv
+[ok] Wrote columns meta: /home/dominik/repo/results/results/bg/bg_full_summary_runs_columns_meta.json
+[ok] Wrote grouped summary: /home/dominik/repo/results/results/bg/bg_full_summary_groups.csv
+[ok] Wrote markdown report: /home/dominik/repo/results/results/bg/bg_full_summary_report.md
+
+[ELIMINATION CANDIDATES]
+[summary] RUN: /home/dominik/venvs/pantone-cu121/bin/python -m src.analysis.summarize_sweep --ckpt_dir ./checkpoints/results/no-bg/full --monitor de00 --mode min --skip_bad --auto_group --report_keep images_dir included_folders epochs mse_weight_epochs optim lr_auto lr_schedule weight_decay --extra_group_keys model --include_json --out_csv /home/dominik/repo/results/results/bg/bg_full_pretest_summary_runs.csv --out_groups_csv /home/dominik/repo/results/results/bg/bg_full_pretest_summary_groups.csv --md_report /home/dominik/repo/results/results/bg/bg_full_pretest_summary_report.md --grid_keys backbone features model --prefer_test
+/home/dominik/repo/src/analysis/summarize_sweep.py:568: FutureWarning: Downcasting object dtype arrays on .fillna, .ffill, .bfill is deprecated and will change in a future version. Call result.infer_objects(copy=False) instead. To opt-in to the future behavior, set `pd.set_option('future.no_silent_downcasting', True)`
+  runs_df[col] = runs_df[col].fillna(vals[0])
+[info] Found 24 checkpoint files and 24 json summaries.
+[diag] loaded records by kind: {'val': 48}
+[ok] Wrote per-run summary: /home/dominik/repo/results/results/bg/bg_full_pretest_summary_runs.csv
+[ok] Wrote best-by-grid: /home/dominik/repo/results/results/bg/bg_full_pretest_summary_runs_best_by_grid.csv
+[ok] Wrote columns meta: /home/dominik/repo/results/results/bg/bg_full_pretest_summary_runs_columns_meta.json
+[ok] Wrote grouped summary: /home/dominik/repo/results/results/bg/bg_full_pretest_summary_groups.csv
+[ok] Wrote markdown report: /home/dominik/repo/results/results/bg/bg_full_pretest_summary_report.md
+
+[ELIMINATION CANDIDATES]
+[eval] Selecting up to top_k=20 unique group winner(s) for TEST in FULL-only mode.
+[eval][debug] winners (grouped): [{'model': 'xattn', 'backbone': 'smallcnn', 'features': 'image+mean+meta'}, {'model': 'xattn', 'backbone': 'smallcnn', 'features': 'image+mean'}, {'model': 'film', 'backbone': 'resnet18', 'features': 'image+mean+meta'}, {'model': 'film', 'backbone': 'smallcnn', 'features': 'image+mean+meta'}, {'model': 'film', 'backbone': 'resnet18', 'features': 'image'}, {'model': 'xattn', 'backbone': 'resnet18', 'features': 'image+mean'}, {'model': 'film', 'backbone': 'resnet18', 'features': 'image+mean'}, {'model': 'xattn', 'backbone': 'smallcnn', 'features': 'image+meta'}, {'model': 'film', 'backbone': 'smallcnn', 'features': 'image+mean'}, {'model': 'film', 'backbone': 'resnet18', 'features': 'image+meta'}, {'model': 'xattn', 'backbone': 'resnet18', 'features': 'image+meta'}, {'model': 'xattn', 'backbone': 'resnet18', 'features': 'image+mean+meta'}, {'model': 'late', 'backbone': 'resnet18', 'features': 'image+mean'}, {'model': 'late', 'backbone': 'resnet18', 'features': 'image+mean+meta'}, {'model': 'late', 'backbone': 'smallcnn', 'features': 'image+mean+meta'}, {'model': 'late', 'backbone': 'resnet18', 'features': 'image'}, {'model': 'late', 'backbone': 'resnet18', 'features': 'image+meta'}, {'model': 'xattn', 'backbone': 'resnet18', 'features': 'image'}, {'model': 'late', 'backbone': 'smallcnn', 'features': 'image+mean'}, {'model': 'film', 'backbone': 'smallcnn', 'features': 'image'}]
+[eval] RUN: /home/dominik/venvs/pantone-cu121/bin/python -m src.engine.eval_ckpt --ckpt ./checkpoints/results/no-bg/full/xattn__smallcnn__image+mean+meta__-focus-__layersnone__ts-2__s101__model=xattn__backbone=smallcnn__features=image+mean+meta/xattn_smallcnn_e063_de001.7373.pt --images_dir /home/data/Pantone/cropped-merged-256 --json_dir /home/data/Pantone/original --labels_csv /home/data/Pantone/gt/pantone_labels.csv --test_split_file ./splits/sweep/IF=focus__EF=NONE__HC=0__SEED=101/test.json --monitor de00 --out_json ./checkpoints/results/no-bg/full/final_test/6e87c305e854/final_summary.json --token_stage -2.0
+usage: eval_ckpt.py [-h] --ckpt CKPT --images_dir IMAGES_DIR --json_dir
+                    JSON_DIR --labels_csv LABELS_CSV --test_split_file
+                    TEST_SPLIT_FILE --monitor MONITOR [--device DEVICE]
+                    [--outdir OUTDIR] [--out_json OUT_JSON]
+eval_ckpt.py: error: unrecognized arguments: --token_stage -2.0
+[eval] RUN: /home/dominik/venvs/pantone-cu121/bin/python -m src.engine.eval_ckpt --ckpt ./checkpoints/results/no-bg/full/xattn__smallcnn__image+mean__-focus-__layersnone__ts-2__s101__model=xattn__backbone=smallcnn__features=image+mean/xattn_smallcnn_e067_de001.7966.pt --images_dir /home/data/Pantone/cropped-merged-256 --json_dir /home/data/Pantone/original --labels_csv /home/data/Pantone/gt/pantone_labels.csv --test_split_file ./splits/sweep/IF=focus__EF=NONE__HC=0__SEED=101/test.json --monitor de00 --out_json ./checkpoints/results/no-bg/full/final_test/14159ef67ff2/final_summary.json --token_stage -2.0
+usage: eval_ckpt.py [-h] --ckpt CKPT --images_dir IMAGES_DIR --json_dir
+                    JSON_DIR --labels_csv LABELS_CSV --test_split_file
+                    TEST_SPLIT_FILE --monitor MONITOR [--device DEVICE]
+                    [--outdir OUTDIR] [--out_json OUT_JSON]
+eval_ckpt.py: error: unrecognized arguments: --token_stage -2.0
+[eval] RUN: /home/dominik/venvs/pantone-cu121/bin/python -m src.engine.eval_ckpt --ckpt ./checkpoints/results/no-bg/full/film__resnet18__image+mean+meta__-focus-__layersnone__ts-2__s101__model=film__backbone=resnet18__features=image+mean+meta/film_resnet18_e067_de001.8758.pt --images_dir /home/data/Pantone/cropped-merged-256 --json_dir /home/data/Pantone/original --labels_csv /home/data/Pantone/gt/pantone_labels.csv --test_split_file ./splits/sweep/IF=focus__EF=NONE__HC=0__SEED=101/test.json --monitor de00 --out_json ./checkpoints/results/no-bg/full/final_test/359cb7704fca/final_summary.json --token_stage -2.0
+usage: eval_ckpt.py [-h] --ckpt CKPT --images_dir IMAGES_DIR --json_dir
+                    JSON_DIR --labels_csv LABELS_CSV --test_split_file
+                    TEST_SPLIT_FILE --monitor MONITOR [--device DEVICE]
+                    [--outdir OUTDIR] [--out_json OUT_JSON]
+eval_ckpt.py: error: unrecognized arguments: --token_stage -2.0
+[eval] RUN: /home/dominik/venvs/pantone-cu121/bin/python -m src.engine.eval_ckpt --ckpt ./checkpoints/results/no-bg/full/film__smallcnn__image+mean+meta__-focus-__layersnone__ts-2__s101__model=film__backbone=smallcnn__features=image+mean+meta/film_smallcnn_e042_de001.8847.pt --images_dir /home/data/Pantone/cropped-merged-256 --json_dir /home/data/Pantone/original --labels_csv /home/data/Pantone/gt/pantone_labels.csv --test_split_file ./splits/sweep/IF=focus__EF=NONE__HC=0__SEED=101/test.json --monitor de00 --out_json ./checkpoints/results/no-bg/full/final_test/caf256c9b8a9/final_summary.json --token_stage -2.0
+usage: eval_ckpt.py [-h] --ckpt CKPT --images_dir IMAGES_DIR --json_dir
+                    JSON_DIR --labels_csv LABELS_CSV --test_split_file
+                    TEST_SPLIT_FILE --monitor MONITOR [--device DEVICE]
+                    [--outdir OUTDIR] [--out_json OUT_JSON]
+eval_ckpt.py: error: unrecognized arguments: --token_stage -2.0
+[eval] RUN: /home/dominik/venvs/pantone-cu121/bin/python -m src.engine.eval_ckpt --ckpt ./checkpoints/results/no-bg/full/film__resnet18__image__-focus-__layersnone__ts-2__s101__model=film__backbone=resnet18__features=image/film_resnet18_e044_de001.8992.pt --images_dir /home/data/Pantone/cropped-merged-256 --json_dir /home/data/Pantone/original --labels_csv /home/data/Pantone/gt/pantone_labels.csv --test_split_file ./splits/sweep/IF=focus__EF=NONE__HC=0__SEED=101/test.json --monitor de00 --out_json ./checkpoints/results/no-bg/full/final_test/21a0190ee6f1/final_summary.json --token_stage -2.0
+usage: eval_ckpt.py [-h] --ckpt CKPT --images_dir IMAGES_DIR --json_dir
+                    JSON_DIR --labels_csv LABELS_CSV --test_split_file
+                    TEST_SPLIT_FILE --monitor MONITOR [--device DEVICE]
+                    [--outdir OUTDIR] [--out_json OUT_JSON]
+eval_ckpt.py: error: unrecognized arguments: --token_stage -2.0
+[eval] RUN: /home/dominik/venvs/pantone-cu121/bin/python -m src.engine.eval_ckpt --ckpt ./checkpoints/results/no-bg/full/xattn__resnet18__image+mean+meta__-focus-__layersnone__ts-2__s101__model=xattn__backbone=resnet18__features=image+mean+meta/xattn_resnet18_e070_de002.0523.pt --images_dir /home/data/Pantone/cropped-merged-256 --json_dir /home/data/Pantone/original --labels_csv /home/data/Pantone/gt/pantone_labels.csv --test_split_file ./splits/sweep/IF=focus__EF=NONE__HC=0__SEED=101/test.json --monitor de00 --out_json ./checkpoints/results/no-bg/full/final_test/1f834ddfeef4/final_summary.json --token_stage -2.0
+usage: eval_ckpt.py [-h] --ckpt CKPT --images_dir IMAGES_DIR --json_dir
+                    JSON_DIR --labels_csv LABELS_CSV --test_split_file
+                    TEST_SPLIT_FILE --monitor MONITOR [--device DEVICE]
+                    [--outdir OUTDIR] [--out_json OUT_JSON]
+eval_ckpt.py: error: unrecognized arguments: --token_stage -2.0
+[eval] RUN: /home/dominik/venvs/pantone-cu121/bin/python -m src.engine.eval_ckpt --ckpt ./checkpoints/results/no-bg/full/film__resnet18__image+mean__-focus-__layersnone__ts-2__s101__model=film__backbone=resnet18__features=image+mean/film_resnet18_e058_de001.9341.pt --images_dir /home/data/Pantone/cropped-merged-256 --json_dir /home/data/Pantone/original --labels_csv /home/data/Pantone/gt/pantone_labels.csv --test_split_file ./splits/sweep/IF=focus__EF=NONE__HC=0__SEED=101/test.json --monitor de00 --out_json ./checkpoints/results/no-bg/full/final_test/d44325f74475/final_summary.json --token_stage -2.0
+usage: eval_ckpt.py [-h] --ckpt CKPT --images_dir IMAGES_DIR --json_dir
+                    JSON_DIR --labels_csv LABELS_CSV --test_split_file
+                    TEST_SPLIT_FILE --monitor MONITOR [--device DEVICE]
+                    [--outdir OUTDIR] [--out_json OUT_JSON]
+eval_ckpt.py: error: unrecognized arguments: --token_stage -2.0
+[eval] RUN: /home/dominik/venvs/pantone-cu121/bin/python -m src.engine.eval_ckpt --ckpt ./checkpoints/results/no-bg/full/xattn__smallcnn__image+meta__-focus-__layersnone__ts-2__s101__model=xattn__backbone=smallcnn__features=image+meta/xattn_smallcnn_e064_de001.9614.pt --images_dir /home/data/Pantone/cropped-merged-256 --json_dir /home/data/Pantone/original --labels_csv /home/data/Pantone/gt/pantone_labels.csv --test_split_file ./splits/sweep/IF=focus__EF=NONE__HC=0__SEED=101/test.json --monitor de00 --out_json ./checkpoints/results/no-bg/full/final_test/4a5fd0d3a900/final_summary.json --token_stage -2.0
+usage: eval_ckpt.py [-h] --ckpt CKPT --images_dir IMAGES_DIR --json_dir
+                    JSON_DIR --labels_csv LABELS_CSV --test_split_file
+                    TEST_SPLIT_FILE --monitor MONITOR [--device DEVICE]
+                    [--outdir OUTDIR] [--out_json OUT_JSON]
+eval_ckpt.py: error: unrecognized arguments: --token_stage -2.0
+[eval] RUN: /home/dominik/venvs/pantone-cu121/bin/python -m src.engine.eval_ckpt --ckpt ./checkpoints/results/no-bg/full/film__smallcnn__image+mean__-focus-__layersnone__ts-2__s101__model=film__backbone=smallcnn__features=image+mean/film_smallcnn_e057_de001.9742.pt --images_dir /home/data/Pantone/cropped-merged-256 --json_dir /home/data/Pantone/original --labels_csv /home/data/Pantone/gt/pantone_labels.csv --test_split_file ./splits/sweep/IF=focus__EF=NONE__HC=0__SEED=101/test.json --monitor de00 --out_json ./checkpoints/results/no-bg/full/final_test/45720b8dd8be/final_summary.json --token_stage -2.0
+usage: eval_ckpt.py [-h] --ckpt CKPT --images_dir IMAGES_DIR --json_dir
+                    JSON_DIR --labels_csv LABELS_CSV --test_split_file
+                    TEST_SPLIT_FILE --monitor MONITOR [--device DEVICE]
+                    [--outdir OUTDIR] [--out_json OUT_JSON]
+eval_ckpt.py: error: unrecognized arguments: --token_stage -2.0
+[eval] RUN: /home/dominik/venvs/pantone-cu121/bin/python -m src.engine.eval_ckpt --ckpt ./checkpoints/results/no-bg/full/film__resnet18__image+meta__-focus-__layersnone__ts-2__s101__model=film__backbone=resnet18__features=image+meta/film_resnet18_e055_de001.9745.pt --images_dir /home/data/Pantone/cropped-merged-256 --json_dir /home/data/Pantone/original --labels_csv /home/data/Pantone/gt/pantone_labels.csv --test_split_file ./splits/sweep/IF=focus__EF=NONE__HC=0__SEED=101/test.json --monitor de00 --out_json ./checkpoints/results/no-bg/full/final_test/493fa80601ab/final_summary.json --token_stage -2.0
+usage: eval_ckpt.py [-h] --ckpt CKPT --images_dir IMAGES_DIR --json_dir
+                    JSON_DIR --labels_csv LABELS_CSV --test_split_file
+                    TEST_SPLIT_FILE --monitor MONITOR [--device DEVICE]
+                    [--outdir OUTDIR] [--out_json OUT_JSON]
+eval_ckpt.py: error: unrecognized arguments: --token_stage -2.0
+[eval] RUN: /home/dominik/venvs/pantone-cu121/bin/python -m src.engine.eval_ckpt --ckpt ./checkpoints/results/no-bg/full/xattn__resnet18__image+meta__-focus-__layersnone__ts-2__s101__model=xattn__backbone=resnet18__features=image+meta/xattn_resnet18_e069_de002.0307.pt --images_dir /home/data/Pantone/cropped-merged-256 --json_dir /home/data/Pantone/original --labels_csv /home/data/Pantone/gt/pantone_labels.csv --test_split_file ./splits/sweep/IF=focus__EF=NONE__HC=0__SEED=101/test.json --monitor de00 --out_json ./checkpoints/results/no-bg/full/final_test/657b7d8e311f/final_summary.json --token_stage -2.0
+usage: eval_ckpt.py [-h] --ckpt CKPT --images_dir IMAGES_DIR --json_dir
+                    JSON_DIR --labels_csv LABELS_CSV --test_split_file
+                    TEST_SPLIT_FILE --monitor MONITOR [--device DEVICE]
+                    [--outdir OUTDIR] [--out_json OUT_JSON]
+eval_ckpt.py: error: unrecognized arguments: --token_stage -2.0
+[eval] RUN: /home/dominik/venvs/pantone-cu121/bin/python -m src.engine.eval_ckpt --ckpt ./checkpoints/results/no-bg/full/xattn__resnet18__image+mean+meta__-focus-__layersnone__ts-2__s101__model=xattn__backbone=resnet18__features=image+mean+meta/xattn_resnet18_e070_de002.0523.pt --images_dir /home/data/Pantone/cropped-merged-256 --json_dir /home/data/Pantone/original --labels_csv /home/data/Pantone/gt/pantone_labels.csv --test_split_file ./splits/sweep/IF=focus__EF=NONE__HC=0__SEED=101/test.json --monitor de00 --out_json ./checkpoints/results/no-bg/full/final_test/6796011c5534/final_summary.json --token_stage -2.0
+usage: eval_ckpt.py [-h] --ckpt CKPT --images_dir IMAGES_DIR --json_dir
+                    JSON_DIR --labels_csv LABELS_CSV --test_split_file
+                    TEST_SPLIT_FILE --monitor MONITOR [--device DEVICE]
+                    [--outdir OUTDIR] [--out_json OUT_JSON]
+eval_ckpt.py: error: unrecognized arguments: --token_stage -2.0
+[eval] RUN: /home/dominik/venvs/pantone-cu121/bin/python -m src.engine.eval_ckpt --ckpt ./checkpoints/results/no-bg/full/late__resnet18__image+mean__-focus-__layersnone__ts-2__s101__model=late__backbone=resnet18__features=image+mean/late_resnet18_e061_de002.0746.pt --images_dir /home/data/Pantone/cropped-merged-256 --json_dir /home/data/Pantone/original --labels_csv /home/data/Pantone/gt/pantone_labels.csv --test_split_file ./splits/sweep/IF=focus__EF=NONE__HC=0__SEED=101/test.json --monitor de00 --out_json ./checkpoints/results/no-bg/full/final_test/09e5536fc9a0/final_summary.json --token_stage -2.0
+usage: eval_ckpt.py [-h] --ckpt CKPT --images_dir IMAGES_DIR --json_dir
+                    JSON_DIR --labels_csv LABELS_CSV --test_split_file
+                    TEST_SPLIT_FILE --monitor MONITOR [--device DEVICE]
+                    [--outdir OUTDIR] [--out_json OUT_JSON]
+eval_ckpt.py: error: unrecognized arguments: --token_stage -2.0
+[eval] RUN: /home/dominik/venvs/pantone-cu121/bin/python -m src.engine.eval_ckpt --ckpt ./checkpoints/results/no-bg/full/late__resnet18__image+mean+meta__-focus-__layersnone__ts-2__s101__model=late__backbone=resnet18__features=image+mean+meta/late_resnet18_e069_de002.0799.pt --images_dir /home/data/Pantone/cropped-merged-256 --json_dir /home/data/Pantone/original --labels_csv /home/data/Pantone/gt/pantone_labels.csv --test_split_file ./splits/sweep/IF=focus__EF=NONE__HC=0__SEED=101/test.json --monitor de00 --out_json ./checkpoints/results/no-bg/full/final_test/55fac85d0c33/final_summary.json --token_stage -2.0
+usage: eval_ckpt.py [-h] --ckpt CKPT --images_dir IMAGES_DIR --json_dir
+                    JSON_DIR --labels_csv LABELS_CSV --test_split_file
+                    TEST_SPLIT_FILE --monitor MONITOR [--device DEVICE]
+                    [--outdir OUTDIR] [--out_json OUT_JSON]
+eval_ckpt.py: error: unrecognized arguments: --token_stage -2.0
+[eval] RUN: /home/dominik/venvs/pantone-cu121/bin/python -m src.engine.eval_ckpt --ckpt ./checkpoints/results/no-bg/full/late__smallcnn__image+mean+meta__-focus-__layersnone__ts-2__s101__model=late__backbone=smallcnn__features=image+mean+meta/late_smallcnn_e057_de002.1169.pt --images_dir /home/data/Pantone/cropped-merged-256 --json_dir /home/data/Pantone/original --labels_csv /home/data/Pantone/gt/pantone_labels.csv --test_split_file ./splits/sweep/IF=focus__EF=NONE__HC=0__SEED=101/test.json --monitor de00 --out_json ./checkpoints/results/no-bg/full/final_test/89c22698f5c6/final_summary.json --token_stage -2.0
+usage: eval_ckpt.py [-h] --ckpt CKPT --images_dir IMAGES_DIR --json_dir
+                    JSON_DIR --labels_csv LABELS_CSV --test_split_file
+                    TEST_SPLIT_FILE --monitor MONITOR [--device DEVICE]
+                    [--outdir OUTDIR] [--out_json OUT_JSON]
+eval_ckpt.py: error: unrecognized arguments: --token_stage -2.0
+[eval] RUN: /home/dominik/venvs/pantone-cu121/bin/python -m src.engine.eval_ckpt --ckpt ./checkpoints/results/no-bg/full/late__resnet18__image__-focus-__layersnone__ts-2__s101__model=late__backbone=resnet18__features=image/late_resnet18_e055_de002.1335.pt --images_dir /home/data/Pantone/cropped-merged-256 --json_dir /home/data/Pantone/original --labels_csv /home/data/Pantone/gt/pantone_labels.csv --test_split_file ./splits/sweep/IF=focus__EF=NONE__HC=0__SEED=101/test.json --monitor de00 --out_json ./checkpoints/results/no-bg/full/final_test/0f27f23429e2/final_summary.json --token_stage -2.0
+usage: eval_ckpt.py [-h] --ckpt CKPT --images_dir IMAGES_DIR --json_dir
+                    JSON_DIR --labels_csv LABELS_CSV --test_split_file
+                    TEST_SPLIT_FILE --monitor MONITOR [--device DEVICE]
+                    [--outdir OUTDIR] [--out_json OUT_JSON]
+eval_ckpt.py: error: unrecognized arguments: --token_stage -2.0
+[eval] RUN: /home/dominik/venvs/pantone-cu121/bin/python -m src.engine.eval_ckpt --ckpt ./checkpoints/results/no-bg/full/late__resnet18__image+meta__-focus-__layersnone__ts-2__s101__model=late__backbone=resnet18__features=image+meta/late_resnet18_e056_de002.1443.pt --images_dir /home/data/Pantone/cropped-merged-256 --json_dir /home/data/Pantone/original --labels_csv /home/data/Pantone/gt/pantone_labels.csv --test_split_file ./splits/sweep/IF=focus__EF=NONE__HC=0__SEED=101/test.json --monitor de00 --out_json ./checkpoints/results/no-bg/full/final_test/ee46c590a383/final_summary.json --token_stage -2.0
+usage: eval_ckpt.py [-h] --ckpt CKPT --images_dir IMAGES_DIR --json_dir
+                    JSON_DIR --labels_csv LABELS_CSV --test_split_file
+                    TEST_SPLIT_FILE --monitor MONITOR [--device DEVICE]
+                    [--outdir OUTDIR] [--out_json OUT_JSON]
+eval_ckpt.py: error: unrecognized arguments: --token_stage -2.0
+[eval] RUN: /home/dominik/venvs/pantone-cu121/bin/python -m src.engine.eval_ckpt --ckpt ./checkpoints/results/no-bg/full/xattn__resnet18__image+mean+meta__-focus-__layersnone__ts-2__s101__model=xattn__backbone=resnet18__features=image+mean+meta/xattn_resnet18_e070_de002.0523.pt --images_dir /home/data/Pantone/cropped-merged-256 --json_dir /home/data/Pantone/original --labels_csv /home/data/Pantone/gt/pantone_labels.csv --test_split_file ./splits/sweep/IF=focus__EF=NONE__HC=0__SEED=101/test.json --monitor de00 --out_json ./checkpoints/results/no-bg/full/final_test/c86f05b55952/final_summary.json --token_stage -2.0
+usage: eval_ckpt.py [-h] --ckpt CKPT --images_dir IMAGES_DIR --json_dir
+                    JSON_DIR --labels_csv LABELS_CSV --test_split_file
+                    TEST_SPLIT_FILE --monitor MONITOR [--device DEVICE]
+                    [--outdir OUTDIR] [--out_json OUT_JSON]
+eval_ckpt.py: error: unrecognized arguments: --token_stage -2.0
+[eval] RUN: /home/dominik/venvs/pantone-cu121/bin/python -m src.engine.eval_ckpt --ckpt ./checkpoints/results/no-bg/full/late__smallcnn__image+mean__-focus-__layersnone__ts-2__s101__model=late__backbone=smallcnn__features=image+mean/late_smallcnn_e080_de002.1979.pt --images_dir /home/data/Pantone/cropped-merged-256 --json_dir /home/data/Pantone/original --labels_csv /home/data/Pantone/gt/pantone_labels.csv --test_split_file ./splits/sweep/IF=focus__EF=NONE__HC=0__SEED=101/test.json --monitor de00 --out_json ./checkpoints/results/no-bg/full/final_test/04855dd162f4/final_summary.json --token_stage -2.0
+usage: eval_ckpt.py [-h] --ckpt CKPT --images_dir IMAGES_DIR --json_dir
+                    JSON_DIR --labels_csv LABELS_CSV --test_split_file
+                    TEST_SPLIT_FILE --monitor MONITOR [--device DEVICE]
+                    [--outdir OUTDIR] [--out_json OUT_JSON]
+eval_ckpt.py: error: unrecognized arguments: --token_stage -2.0
+[eval] RUN: /home/dominik/venvs/pantone-cu121/bin/python -m src.engine.eval_ckpt --ckpt ./checkpoints/results/no-bg/full/film__smallcnn__image__-focus-__layersnone__ts-2__s101__model=film__backbone=smallcnn__features=image/film_smallcnn_e057_de002.2229.pt --images_dir /home/data/Pantone/cropped-merged-256 --json_dir /home/data/Pantone/original --labels_csv /home/data/Pantone/gt/pantone_labels.csv --test_split_file ./splits/sweep/IF=focus__EF=NONE__HC=0__SEED=101/test.json --monitor de00 --out_json ./checkpoints/results/no-bg/full/final_test/dcb8c5ba1a3c/final_summary.json --token_stage -2.0
+usage: eval_ckpt.py [-h] --ckpt CKPT --images_dir IMAGES_DIR --json_dir
+                    JSON_DIR --labels_csv LABELS_CSV --test_split_file
+                    TEST_SPLIT_FILE --monitor MONITOR [--device DEVICE]
+                    [--outdir OUTDIR] [--out_json OUT_JSON]
+eval_ckpt.py: error: unrecognized arguments: --token_stage -2.0
+[eval] winners(full-only): ok=0 fail=20
+[summary] RUN: /home/dominik/venvs/pantone-cu121/bin/python -m src.analysis.summarize_sweep --ckpt_dir ./checkpoints/results/no-bg/full --monitor de00 --mode min --skip_bad --auto_group --report_keep images_dir included_folders epochs mse_weight_epochs optim lr_auto lr_schedule weight_decay --extra_group_keys model --include_json --out_csv /home/dominik/repo/results/results/bg/bg_single_summary_runs.csv --out_groups_csv /home/dominik/repo/results/results/bg/bg_single_summary_groups.csv --md_report /home/dominik/repo/results/results/bg/bg_single_summary_report.md --grid_keys backbone features model --prefer_test
+/home/dominik/repo/src/analysis/summarize_sweep.py:568: FutureWarning: Downcasting object dtype arrays on .fillna, .ffill, .bfill is deprecated and will change in a future version. Call result.infer_objects(copy=False) instead. To opt-in to the future behavior, set `pd.set_option('future.no_silent_downcasting', True)`
+  runs_df[col] = runs_df[col].fillna(vals[0])
+[info] Found 24 checkpoint files and 24 json summaries.
+[diag] loaded records by kind: {'val': 48}
+[ok] Wrote per-run summary: /home/dominik/repo/results/results/bg/bg_single_summary_runs.csv
+[ok] Wrote best-by-grid: /home/dominik/repo/results/results/bg/bg_single_summary_runs_best_by_grid.csv
+[ok] Wrote columns meta: /home/dominik/repo/results/results/bg/bg_single_summary_runs_columns_meta.json
+[ok] Wrote grouped summary: /home/dominik/repo/results/results/bg/bg_single_summary_groups.csv
+[ok] Wrote markdown report: /home/dominik/repo/results/results/bg/bg_single_summary_report.md
+
+[ELIMINATION CANDIDATES]
+[summary] RUN: /home/dominik/venvs/pantone-cu121/bin/python -m src.analysis.summarize_sweep --ckpt_dir ./checkpoints/results/no-bg/full ./checkpoints/results/no-bg/full/final_test --monitor de00 --mode min --skip_bad --auto_group --report_keep images_dir included_folders epochs mse_weight_epochs optim lr_auto lr_schedule weight_decay --extra_group_keys model --include_json --out_csv /home/dominik/repo/results/results/bg/bg_test_summary_runs.csv --out_groups_csv /home/dominik/repo/results/results/bg/bg_test_summary_groups.csv --md_report /home/dominik/repo/results/results/bg/bg_test_summary_report.md --grid_keys backbone features model --prefer_test --only_test
+/home/dominik/repo/src/analysis/summarize_sweep.py:568: FutureWarning: Downcasting object dtype arrays on .fillna, .ffill, .bfill is deprecated and will change in a future version. Call result.infer_objects(copy=False) instead. To opt-in to the future behavior, set `pd.set_option('future.no_silent_downcasting', True)`
+  runs_df[col] = runs_df[col].fillna(vals[0])
+[info] Found 24 checkpoint files and 24 json summaries.
+[diag] loaded records by kind: {'val': 48}
+[ok] Wrote per-run summary: /home/dominik/repo/results/results/bg/bg_test_summary_runs.csv
+[ok] Wrote best-by-grid: /home/dominik/repo/results/results/bg/bg_test_summary_runs_best_by_grid.csv
+[ok] Wrote columns meta: /home/dominik/repo/results/results/bg/bg_test_summary_runs_columns_meta.json
+[ok] Wrote grouped summary: /home/dominik/repo/results/results/bg/bg_test_summary_groups.csv
+[ok] Wrote markdown report: /home/dominik/repo/results/results/bg/bg_test_summary_report.md
+
+[ELIMINATION CANDIDATES]
+[analysis] runs_csv=/home/dominik/repo/results/results/bg/analysis/analysis_input.csv
+[analysis] mode=both test_split_file=./splits/sweep/IF=focus__EF=NONE__HC=0__SEED=101/test.json outdir=/home/dominik/repo/results/results/bg/analysis
+[split] Included 2070/2070 samples by folders ['focus'] (subdirs included)
+[split] train=1755 val=315
+[analysis] inferred attn_dim=256 from checkpoint.
+[ok] Wrote HTML report → /home/dominik/repo/results/results/bg/analysis/217021d3d0a9/val_report.html
+[split] loaded <- ./splits/sweep/IF=focus__EF=NONE__HC=0__SEED=101/test.json
+[info] Saved copy of 414 test samples to /home/data/Pantone/test-dominik/test.csv
+[split] Included 2070/2070 samples by folders ['focus'] (subdirs included)
+[split] train=1656 val=0 test=414
+[analysis] inferred attn_dim=256 from checkpoint.
+[ok] Wrote HTML report → /home/dominik/repo/results/results/bg/analysis/217021d3d0a9/test_report.html
+[split] Included 2070/2070 samples by folders ['focus'] (subdirs included)
+[split] train=1755 val=315
+[analysis] inferred attn_dim=256 from checkpoint.
+[ok] Wrote HTML report → /home/dominik/repo/results/results/bg/analysis/2087425f8cd4/val_report.html
+[split] loaded <- ./splits/sweep/IF=focus__EF=NONE__HC=0__SEED=101/test.json
+[info] Saved copy of 414 test samples to /home/data/Pantone/test-dominik/test.csv
+[split] Included 2070/2070 samples by folders ['focus'] (subdirs included)
+[split] train=1656 val=0 test=414
+[analysis] inferred attn_dim=256 from checkpoint.
+[ok] Wrote HTML report → /home/dominik/repo/results/results/bg/analysis/2087425f8cd4/test_report.html
+[split] Included 2070/2070 samples by folders ['focus'] (subdirs included)
+[split] train=1755 val=315
+[ok] Wrote HTML report → /home/dominik/repo/results/results/bg/analysis/212bdf2b6e71/val_report.html
+[split] loaded <- ./splits/sweep/IF=focus__EF=NONE__HC=0__SEED=101/test.json
+[info] Saved copy of 414 test samples to /home/data/Pantone/test-dominik/test.csv
+[split] Included 2070/2070 samples by folders ['focus'] (subdirs included)
+[split] train=1656 val=0 test=414
+[ok] Wrote HTML report → /home/dominik/repo/results/results/bg/analysis/212bdf2b6e71/test_report.html
+[split] Included 2070/2070 samples by folders ['focus'] (subdirs included)
+[split] train=1755 val=315
+[ok] Wrote HTML report → /home/dominik/repo/results/results/bg/analysis/712fb3604eae/val_report.html
+[split] loaded <- ./splits/sweep/IF=focus__EF=NONE__HC=0__SEED=101/test.json
+[info] Saved copy of 414 test samples to /home/data/Pantone/test-dominik/test.csv
+[split] Included 2070/2070 samples by folders ['focus'] (subdirs included)
+[split] train=1656 val=0 test=414
+[ok] Wrote HTML report → /home/dominik/repo/results/results/bg/analysis/712fb3604eae/test_report.html
+[split] Included 2070/2070 samples by folders ['focus'] (subdirs included)
+[split] train=1755 val=315
+[ok] Wrote HTML report → /home/dominik/repo/results/results/bg/analysis/41a62ec7ec80/val_report.html
+[split] loaded <- ./splits/sweep/IF=focus__EF=NONE__HC=0__SEED=101/test.json
+[info] Saved copy of 414 test samples to /home/data/Pantone/test-dominik/test.csv
+[split] Included 2070/2070 samples by folders ['focus'] (subdirs included)
+[split] train=1656 val=0 test=414
+[ok] Wrote HTML report → /home/dominik/repo/results/results/bg/analysis/41a62ec7ec80/test_report.html
+[split] Included 2070/2070 samples by folders ['focus'] (subdirs included)
+[split] train=1755 val=315
+[analysis] inferred attn_dim=256 from checkpoint.
+[ok] Wrote HTML report → /home/dominik/repo/results/results/bg/analysis/b1c5369cde43/val_report.html
+[split] loaded <- ./splits/sweep/IF=focus__EF=NONE__HC=0__SEED=101/test.json
+[info] Saved copy of 414 test samples to /home/data/Pantone/test-dominik/test.csv
+[split] Included 2070/2070 samples by folders ['focus'] (subdirs included)
+[split] train=1656 val=0 test=414
+[analysis] inferred attn_dim=256 from checkpoint.
+[ok] Wrote HTML report → /home/dominik/repo/results/results/bg/analysis/b1c5369cde43/test_report.html
+[split] Included 2070/2070 samples by folders ['focus'] (subdirs included)
+[split] train=1755 val=315
+[ok] Wrote HTML report → /home/dominik/repo/results/results/bg/analysis/70f6bb681e64/val_report.html
+[split] loaded <- ./splits/sweep/IF=focus__EF=NONE__HC=0__SEED=101/test.json
+[info] Saved copy of 414 test samples to /home/data/Pantone/test-dominik/test.csv
+[split] Included 2070/2070 samples by folders ['focus'] (subdirs included)
+[split] train=1656 val=0 test=414
+[ok] Wrote HTML report → /home/dominik/repo/results/results/bg/analysis/70f6bb681e64/test_report.html
+[split] Included 2070/2070 samples by folders ['focus'] (subdirs included)
+[split] train=1755 val=315
+[analysis] inferred attn_dim=256 from checkpoint.
+[ok] Wrote HTML report → /home/dominik/repo/results/results/bg/analysis/590915ceb157/val_report.html
+[split] loaded <- ./splits/sweep/IF=focus__EF=NONE__HC=0__SEED=101/test.json
+[info] Saved copy of 414 test samples to /home/data/Pantone/test-dominik/test.csv
+[split] Included 2070/2070 samples by folders ['focus'] (subdirs included)
+[split] train=1656 val=0 test=414
+[analysis] inferred attn_dim=256 from checkpoint.
+[ok] Wrote HTML report → /home/dominik/repo/results/results/bg/analysis/590915ceb157/test_report.html
+[split] Included 2070/2070 samples by folders ['focus'] (subdirs included)
+[split] train=1755 val=315
+[ok] Wrote HTML report → /home/dominik/repo/results/results/bg/analysis/fae892177eee/val_report.html
+[split] loaded <- ./splits/sweep/IF=focus__EF=NONE__HC=0__SEED=101/test.json
+[info] Saved copy of 414 test samples to /home/data/Pantone/test-dominik/test.csv
+[split] Included 2070/2070 samples by folders ['focus'] (subdirs included)
+[split] train=1656 val=0 test=414
+[ok] Wrote HTML report → /home/dominik/repo/results/results/bg/analysis/fae892177eee/test_report.html
+[split] Included 2070/2070 samples by folders ['focus'] (subdirs included)
+[split] train=1755 val=315
+[ok] Wrote HTML report → /home/dominik/repo/results/results/bg/analysis/5d334d895b08/val_report.html
+[split] loaded <- ./splits/sweep/IF=focus__EF=NONE__HC=0__SEED=101/test.json
+[info] Saved copy of 414 test samples to /home/data/Pantone/test-dominik/test.csv
+[split] Included 2070/2070 samples by folders ['focus'] (subdirs included)
+[split] train=1656 val=0 test=414
+[ok] Wrote HTML report → /home/dominik/repo/results/results/bg/analysis/5d334d895b08/test_report.html
+[split] Included 2070/2070 samples by folders ['focus'] (subdirs included)
+[split] train=1755 val=315
+[analysis] inferred attn_dim=256 from checkpoint.
+[ok] Wrote HTML report → /home/dominik/repo/results/results/bg/analysis/367246e9d25c/val_report.html
+[split] loaded <- ./splits/sweep/IF=focus__EF=NONE__HC=0__SEED=101/test.json
+[info] Saved copy of 414 test samples to /home/data/Pantone/test-dominik/test.csv
+[split] Included 2070/2070 samples by folders ['focus'] (subdirs included)
+[split] train=1656 val=0 test=414
+[analysis] inferred attn_dim=256 from checkpoint.
+[ok] Wrote HTML report → /home/dominik/repo/results/results/bg/analysis/367246e9d25c/test_report.html
+[split] Included 2070/2070 samples by folders ['focus'] (subdirs included)
+[split] train=1755 val=315
+[analysis] inferred attn_dim=256 from checkpoint.
+[ok] Wrote HTML report → /home/dominik/repo/results/results/bg/analysis/0654a58f64b4/val_report.html
+[split] loaded <- ./splits/sweep/IF=focus__EF=NONE__HC=0__SEED=101/test.json
+[info] Saved copy of 414 test samples to /home/data/Pantone/test-dominik/test.csv
+[split] Included 2070/2070 samples by folders ['focus'] (subdirs included)
+[split] train=1656 val=0 test=414
+[analysis] inferred attn_dim=256 from checkpoint.
+[ok] Wrote HTML report → /home/dominik/repo/results/results/bg/analysis/0654a58f64b4/test_report.html
+[split] Included 2070/2070 samples by folders ['focus'] (subdirs included)
+[split] train=1755 val=315
+[ok] Wrote HTML report → /home/dominik/repo/results/results/bg/analysis/615299a2596e/val_report.html
+[split] loaded <- ./splits/sweep/IF=focus__EF=NONE__HC=0__SEED=101/test.json
+[info] Saved copy of 414 test samples to /home/data/Pantone/test-dominik/test.csv
+[split] Included 2070/2070 samples by folders ['focus'] (subdirs included)
+[split] train=1656 val=0 test=414
+[ok] Wrote HTML report → /home/dominik/repo/results/results/bg/analysis/615299a2596e/test_report.html
+[split] Included 2070/2070 samples by folders ['focus'] (subdirs included)
+[split] train=1755 val=315
+[ok] Wrote HTML report → /home/dominik/repo/results/results/bg/analysis/14a793874137/val_report.html
+[split] loaded <- ./splits/sweep/IF=focus__EF=NONE__HC=0__SEED=101/test.json
+[info] Saved copy of 414 test samples to /home/data/Pantone/test-dominik/test.csv
+[split] Included 2070/2070 samples by folders ['focus'] (subdirs included)
+[split] train=1656 val=0 test=414
+[ok] Wrote HTML report → /home/dominik/repo/results/results/bg/analysis/14a793874137/test_report.html
+[split] Included 2070/2070 samples by folders ['focus'] (subdirs included)
+[split] train=1755 val=315
+[ok] Wrote HTML report → /home/dominik/repo/results/results/bg/analysis/286cb3e3ee11/val_report.html
+[split] loaded <- ./splits/sweep/IF=focus__EF=NONE__HC=0__SEED=101/test.json
+[info] Saved copy of 414 test samples to /home/data/Pantone/test-dominik/test.csv
+[split] Included 2070/2070 samples by folders ['focus'] (subdirs included)
+[split] train=1656 val=0 test=414
+[ok] Wrote HTML report → /home/dominik/repo/results/results/bg/analysis/286cb3e3ee11/test_report.html
+[split] Included 2070/2070 samples by folders ['focus'] (subdirs included)
+[split] train=1755 val=315
+[ok] Wrote HTML report → /home/dominik/repo/results/results/bg/analysis/227058fa5f99/val_report.html
+[split] loaded <- ./splits/sweep/IF=focus__EF=NONE__HC=0__SEED=101/test.json
+[info] Saved copy of 414 test samples to /home/data/Pantone/test-dominik/test.csv
+[split] Included 2070/2070 samples by folders ['focus'] (subdirs included)
+[split] train=1656 val=0 test=414
+[ok] Wrote HTML report → /home/dominik/repo/results/results/bg/analysis/227058fa5f99/test_report.html
+[split] Included 2070/2070 samples by folders ['focus'] (subdirs included)
+[split] train=1755 val=315
+[ok] Wrote HTML report → /home/dominik/repo/results/results/bg/analysis/3dcd3ae4334e/val_report.html
+[split] loaded <- ./splits/sweep/IF=focus__EF=NONE__HC=0__SEED=101/test.json
+[info] Saved copy of 414 test samples to /home/data/Pantone/test-dominik/test.csv
+[split] Included 2070/2070 samples by folders ['focus'] (subdirs included)
+[split] train=1656 val=0 test=414
+[ok] Wrote HTML report → /home/dominik/repo/results/results/bg/analysis/3dcd3ae4334e/test_report.html
+[split] Included 2070/2070 samples by folders ['focus'] (subdirs included)
+[split] train=1755 val=315
+[analysis] inferred attn_dim=256 from checkpoint.
+[ok] Wrote HTML report → /home/dominik/repo/results/results/bg/analysis/279595b9fed2/val_report.html
+[split] loaded <- ./splits/sweep/IF=focus__EF=NONE__HC=0__SEED=101/test.json
+[info] Saved copy of 414 test samples to /home/data/Pantone/test-dominik/test.csv
+[split] Included 2070/2070 samples by folders ['focus'] (subdirs included)
+[split] train=1656 val=0 test=414
+[analysis] inferred attn_dim=256 from checkpoint.
+[ok] Wrote HTML report → /home/dominik/repo/results/results/bg/analysis/279595b9fed2/test_report.html
+[split] Included 2070/2070 samples by folders ['focus'] (subdirs included)
+[split] train=1755 val=315
+[ok] Wrote HTML report → /home/dominik/repo/results/results/bg/analysis/56cfe7d9bf07/val_report.html
+[split] loaded <- ./splits/sweep/IF=focus__EF=NONE__HC=0__SEED=101/test.json
+[info] Saved copy of 414 test samples to /home/data/Pantone/test-dominik/test.csv
+[split] Included 2070/2070 samples by folders ['focus'] (subdirs included)
+[split] train=1656 val=0 test=414
+[ok] Wrote HTML report → /home/dominik/repo/results/results/bg/analysis/56cfe7d9bf07/test_report.html
+[split] Included 2070/2070 samples by folders ['focus'] (subdirs included)
+[split] train=1755 val=315
+[ok] Wrote HTML report → /home/dominik/repo/results/results/bg/analysis/935b052f29ae/val_report.html
+[split] loaded <- ./splits/sweep/IF=focus__EF=NONE__HC=0__SEED=101/test.json
+[info] Saved copy of 414 test samples to /home/data/Pantone/test-dominik/test.csv
+[split] Included 2070/2070 samples by folders ['focus'] (subdirs included)
+[split] train=1656 val=0 test=414
+[ok] Wrote HTML report → /home/dominik/repo/results/results/bg/analysis/935b052f29ae/test_report.html
+[split] Included 2070/2070 samples by folders ['focus'] (subdirs included)
+[split] train=1755 val=315
+[analysis] inferred attn_dim=256 from checkpoint.
+[ok] Wrote HTML report → /home/dominik/repo/results/results/bg/analysis/387375c050e7/val_report.html
+[split] loaded <- ./splits/sweep/IF=focus__EF=NONE__HC=0__SEED=101/test.json
+[info] Saved copy of 414 test samples to /home/data/Pantone/test-dominik/test.csv
+[split] Included 2070/2070 samples by folders ['focus'] (subdirs included)
+[split] train=1656 val=0 test=414
+[analysis] inferred attn_dim=256 from checkpoint.
+[ok] Wrote HTML report → /home/dominik/repo/results/results/bg/analysis/387375c050e7/test_report.html
+[split] Included 2070/2070 samples by folders ['focus'] (subdirs included)
+[split] train=1755 val=315
+[ok] Wrote HTML report → /home/dominik/repo/results/results/bg/analysis/0d2f4f535cbb/val_report.html
+[split] loaded <- ./splits/sweep/IF=focus__EF=NONE__HC=0__SEED=101/test.json
+[info] Saved copy of 414 test samples to /home/data/Pantone/test-dominik/test.csv
+[split] Included 2070/2070 samples by folders ['focus'] (subdirs included)
+[split] train=1656 val=0 test=414
+[ok] Wrote HTML report → /home/dominik/repo/results/results/bg/analysis/0d2f4f535cbb/test_report.html
+[split] Included 2070/2070 samples by folders ['focus'] (subdirs included)
+[split] train=1755 val=315
+[ok] Wrote HTML report → /home/dominik/repo/results/results/bg/analysis/87039354abfa/val_report.html
+[split] loaded <- ./splits/sweep/IF=focus__EF=NONE__HC=0__SEED=101/test.json
+[info] Saved copy of 414 test samples to /home/data/Pantone/test-dominik/test.csv
+[split] Included 2070/2070 samples by folders ['focus'] (subdirs included)
+[split] train=1656 val=0 test=414
+[ok] Wrote HTML report → /home/dominik/repo/results/results/bg/analysis/87039354abfa/test_report.html
+[split] Included 2070/2070 samples by folders ['focus'] (subdirs included)
+[split] train=1755 val=315
+[ok] Wrote HTML report → /home/dominik/repo/results/results/bg/analysis/16235f199369/val_report.html
+[split] loaded <- ./splits/sweep/IF=focus__EF=NONE__HC=0__SEED=101/test.json
+[info] Saved copy of 414 test samples to /home/data/Pantone/test-dominik/test.csv
+[split] Included 2070/2070 samples by folders ['focus'] (subdirs included)
+[split] train=1656 val=0 test=414
+[ok] Wrote HTML report → /home/dominik/repo/results/results/bg/analysis/16235f199369/test_report.html
+[ok] Wrote manifest: /home/dominik/repo/results/results/bg/analysis/analysis_manifest.csv
+[sweep] FULL-only mode complete.
+[sweep] OK: ./configs/results/bg.yaml
+

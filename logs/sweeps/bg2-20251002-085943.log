@@ -1,0 +1,2 @@
+[sweep] === ./configs/results/bg2.yaml ===
+[sweep] cmd: python [sweep] cmd: -u [sweep] cmd: -m [sweep] cmd: src.engine.sweep [sweep] cmd: --config [sweep] cmd: ./configs/results/bg2.yaml [sweep] cmd: --only_full [sweep] cmd: --auto-summary [sweep] cmd: --analysis [sweep] cmd: --eval-winners [sweep] cmd: --test_split_file [sweep] cmd: AUTO [sweep] cmd: --skip-existing 

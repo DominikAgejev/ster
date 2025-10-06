@@ -1,0 +1,4 @@
+model,backbone,features,mse_weight_epochs,matched,better,same,worse,delta_mean,delta_median,pct_better
+xattn,smallcnn,image,75,3,3,0,0,-1.3130795266893172,-1.3130795266893172,100.0
+film,smallcnn,image,75,3,3,0,0,-1.0071464137425497,-1.0071464137425497,100.0
+late,smallcnn,image,75,3,3,0,0,-0.8594675366840665,-0.8594675366840665,100.0

@@ -1,0 +1,10 @@
+run_id,best_metric,best_epoch,ckpt_path,model,backbone,features,included_folders,mse_weight_epochs,mse_weight_start,lr,weight_decay,pred_activation,activation_eps,seed
+6e13a9f74235,2.4785352844789803,46,/home/dominik/repo/checkpoints/sweep/flair3/film_resnet18_e046_de002.4785.pt,film,resnet18,image+meta,focus,75,1.0,0.001,0.0001,sigmoid_eps,0.001,100
+715f696afca2,2.6094353256455385,40,/home/dominik/repo/checkpoints/sweep/flair3/film_resnet18_e040_de002.6094.pt,film,resnet18,image+meta,focus,75,1.0,0.001,0.0001,sigmoid_eps,0.001,100
+2b91144190fb,2.5527104469667,42,/home/dominik/repo/checkpoints/sweep/flair3/film_resnet18_e042_de002.5527.pt,film,resnet18,image+meta,focus,75,1.0,0.001,0.0001,sigmoid_eps,0.001,100
+21228c7b1a4d,3.0901385244116724,47,/home/dominik/repo/checkpoints/sweep/flair3/xattn_resnet18_e047_de003.0901.pt,xattn,resnet18,image+meta,focus,75,1.0,0.001,0.0001,sigmoid_eps,0.001,100
+b3736d9a9f2a,2.7298839494406457,39,/home/dominik/repo/checkpoints/sweep/flair3/late_resnet18_e039_de002.7299.pt,late,resnet18,image+meta,focus,75,1.0,0.001,0.0001,sigmoid_eps,0.001,100
+e5769475ed86,2.5234911010926027,49,/home/dominik/repo/checkpoints/sweep/flair3/late_resnet18_e049_de002.5235.pt,late,resnet18,image+meta,focus,75,1.0,0.001,0.0001,sigmoid_eps,0.001,100
+aa3f7307905b,2.6255930647792587,51,/home/dominik/repo/checkpoints/sweep/flair3/late_resnet18_e051_de002.6256.pt,late,resnet18,image+meta,focus,75,1.0,0.001,0.0001,sigmoid_eps,0.001,100
+b8f4268e4fb2,2.8898447881261986,42,/home/dominik/repo/checkpoints/sweep/flair3/xattn_resnet18_e042_de002.8898.pt,xattn,resnet18,image+meta,focus,75,1.0,0.001,0.0001,sigmoid_eps,0.001,100
+b7dc7a199ae3,2.7913396085601256,49,/home/dominik/repo/checkpoints/sweep/flair3/xattn_resnet18_e049_de002.7913.pt,xattn,resnet18,image+meta,focus,75,1.0,0.001,0.0001,sigmoid_eps,0.001,100

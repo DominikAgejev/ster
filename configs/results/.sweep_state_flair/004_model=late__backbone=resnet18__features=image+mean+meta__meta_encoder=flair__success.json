@@ -1,0 +1,5 @@
+{
+  "run_id": "004_model=late__backbone=resnet18__features=image+mean+meta__meta_encoder=flair",
+  "rc": 0,
+  "secs": 413.89
+}

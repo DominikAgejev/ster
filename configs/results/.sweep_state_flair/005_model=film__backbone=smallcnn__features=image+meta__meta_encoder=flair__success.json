@@ -1,0 +1,5 @@
+{
+  "run_id": "005_model=film__backbone=smallcnn__features=image+meta__meta_encoder=flair",
+  "rc": 0,
+  "secs": 331.78
+}

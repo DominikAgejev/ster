@@ -1,0 +1,5 @@
+{
+  "run_id": "007_model=film__backbone=resnet18__features=image+meta__meta_encoder=flair",
+  "rc": 0,
+  "secs": 392.84
+}

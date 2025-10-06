@@ -1,0 +1,5 @@
+{
+  "run_id": "021_model=late__backbone=smallcnn__features=image+mean+meta__mse_space_switch=50__robust=none",
+  "rc": 0,
+  "secs": 294.81
+}

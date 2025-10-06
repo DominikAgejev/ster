@@ -1,0 +1,7 @@
+model,backbone,features,included_folders,mse_weight_epochs,matched,better,same,worse,delta_mean,delta_median,pct_better
+xattn,resnet18,image+meta,focus,5,1,1,0,0,-0.7080346130463013,-0.7080346130463013,100.0
+late,resnet18,image+meta,focus,75,1,1,0,0,-0.6006713373115269,-0.6006713373115269,100.0
+film,resnet18,image+meta,focus,5,1,1,0,0,-0.4662652949252766,-0.4662652949252766,100.0
+xattn,resnet18,image+meta,focus,75,1,1,0,0,-0.3097236730966224,-0.3097236730966224,100.0
+late,resnet18,image+meta,focus,5,1,1,0,0,-0.28710836531167994,-0.28710836531167994,100.0
+film,resnet18,image+meta,focus,75,1,0,0,1,0.0499873735818519,0.0499873735818519,0.0

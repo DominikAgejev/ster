@@ -1,0 +1,60 @@
+{
+  "grid_keys": [
+    "model",
+    "backbone",
+    "features",
+    "included_folders",
+    "meta_encoder",
+    "meta_layers",
+    "meta_text_template"
+  ],
+  "report_keep": [
+    "images_dir",
+    "epochs",
+    "test_per_class",
+    "batch_size",
+    "color_space",
+    "pred_activation",
+    "mse_space",
+    "optim",
+    "lr",
+    "weight_decay",
+    "lr_schedule",
+    "lr_auto",
+    "mse_weight_epochs"
+  ],
+  "constants": [
+    "epochs",
+    "batch_size",
+    "color_space",
+    "optim",
+    "lr",
+    "weight_decay",
+    "lr_schedule",
+    "lr_auto",
+    "mse_weight_epochs",
+    "val_split",
+    "meta_model_name"
+  ],
+  "top_cols": [
+    "run_id",
+    "epochs",
+    "batch_size",
+    "color_space",
+    "optim",
+    "lr",
+    "weight_decay",
+    "lr_schedule",
+    "lr_auto",
+    "mse_weight_epochs",
+    "model",
+    "backbone",
+    "features",
+    "included_folders",
+    "meta_encoder",
+    "meta_layers",
+    "meta_text_template",
+    "best_metric",
+    "best_epoch"
+  ]
+}
